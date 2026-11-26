@@ -5,7 +5,9 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+from pathlib import Path
 
+from insureiq.etl import run_etl
 from insureiq.synthetic import main as generate_main
 
 
@@ -25,10 +27,17 @@ def doctor() -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", nargs="?", default="doctor", choices=("doctor", "generate"))
+    parser.add_argument(
+        "command", nargs="?", default="doctor", choices=("doctor", "generate", "etl")
+    )
+    parser.add_argument("--raw-dir", default="data/synthetic")
+    parser.add_argument("--processed-dir", default="data/processed")
     args, remaining = parser.parse_known_args()
     if args.command == "generate":
         sys.argv = [sys.argv[0], *remaining]
         generate_main()
+    elif args.command == "etl":
+        result = run_etl(Path(args.raw_dir), Path(args.processed_dir))
+        print(f"ETL completado: {result}")
     else:
         doctor()

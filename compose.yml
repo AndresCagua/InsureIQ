@@ -15,6 +15,7 @@ services:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       MINIO_ENDPOINT: minio:9000
+      PYTHONPATH: /workspace/src
     volumes:
       - .:/workspace
     profiles: [core, orchestration, mlops, demo]
