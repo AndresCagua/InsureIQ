@@ -22,6 +22,7 @@ reports/fraud_model.joblib
 reports/model_registry.json
 dashboards/exports/public_iowa_crashes_sample.csv
 dashboards/exports/public_vehicle_fraud_benchmark.csv
+dashboards/exports/fraud_review_queue.csv
 data/processed/
 data/synthetic/
 mlruns/

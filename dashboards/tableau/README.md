@@ -31,7 +31,7 @@ Después de ejecutar `make fraud-train` y `make bi-data`, agregá la fuente:
 dashboards/exports/ml_fraud_metrics.csv
 ```
 
-Creá una hoja **Métricas ML** con `metric` en filas y `value` en texto, filtrando `model = fraud-baseline-public`. Mostrá una nota: **Benchmark ML público — no producción**.
+Creá una hoja **Métricas ML** con `metric` en filas y `value` en texto, filtrando `model = fraud-baseline-public`. Agregá `dashboards/exports/fraud_review_queue.csv` como fuente para una hoja **Cola de revisión manual**, mostrando `policy_number`, `fraud_probability`, `recommendation` y `incident_severity`. Mostrá una nota: **Benchmark ML público — no producción**.
 
 ## Publicación
 

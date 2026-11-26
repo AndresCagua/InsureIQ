@@ -155,6 +155,15 @@ Exportar métricas y estado del modelo de fraude como una fuente BI separada, a�
 
 Salida: extract ML para Power BI/Tableau, medidas documentadas, panel Streamlit y etiquetas de limitación.
 
+### S18 — Cola de revisión manual y scoring batch
+Relacionado con la pregunta posterior del propietario sobre la cantidad de casos priorizados y cuáles aparecen en los dashboards.
+
+> "cual es la diferencia entre flujos de seguros sintéticos y flujo de fraude ?? los dos flujos estan completos de principio a fin ??? cual flujo estoy usando en los dashboards ??' y por ultimo de la data total analizada, cual es la cantidad de peticiones que pueden ser fraude que requieren revisión manual y cuales son, esa data si se me está mostrando si la estoy presentando en los dashboards ???"
+
+Generar scoring batch del benchmark público, exportar la cola de revisión manual con identificadores y variables explicativas, conectar el extract a BI y mostrar claramente que la cola es una recomendación del benchmark, no una decisión real de aseguramiento.
+
+Salida: `fraud_review_queue.csv`, métricas de cobertura y dashboard con conteo, tasa y detalle filtrable.
+
 ## Tasks
 
 - T1 (S1): congelar alcance, idioma y convención de commits — ruta: documentación — commit: no aplica (slice documental completado).
@@ -173,7 +182,8 @@ Salida: extract ML para Power BI/Tableau, medidas documentadas, panel Streamlit 
 - T14 (S14): incorporar fuente pública real y dashboards conectados — ruta: `data/`, `src/`, `dashboards/`, `docs/`, `tests/` — commit: 20261126 incorporar datos publicos y dashboards.
 - T15 (S15): crear artefactos Power BI/Tableau y checklist de publicación — ruta: `dashboards/powerbi/`, `dashboards/tableau/`, `docs/` — commit: 20261126 preparar dashboards Power BI y Tableau.
 - T16 (S16): incorporar benchmark público de fraude y predicción real — ruta: `data/`, `src/`, `reports/`, `tests/`, `docs/` — commit: 20261126 habilitar benchmark publico de fraude.
-- T17 (S17): exponer métricas ML en dashboards — ruta: `src/`, `dashboards/`, `docs/`, `tests/` — commit: pendiente.
+- T17 (S17): exponer métricas ML en dashboards — ruta: `src/`, `dashboards/`, `docs/`, `tests/` — commit: 20261126 mostrar metricas ML en dashboards.
+- T18 (S18): generar cola batch de revisión manual para BI — ruta: `src/`, `dashboards/`, `docs/`, `tests/` — commit: pendiente.
 
 ## Log
 

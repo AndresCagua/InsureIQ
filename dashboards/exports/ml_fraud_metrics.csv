@@ -2,3 +2,5 @@ model,task,metric,value,is_ml,benchmark,recommendation_policy
 fraud-baseline-public,fraud_review_recommendation,roc_auc,0.9840985076222708,True,Zenodo 13381118,MANUAL_REVIEW or STANDARD_REVIEW
 fraud-baseline-public,fraud_review_recommendation,average_precision,0.9146386805980439,True,Zenodo 13381118,MANUAL_REVIEW or STANDARD_REVIEW
 fraud-baseline-public,fraud_review_recommendation,test_rows,2500.0,True,Zenodo 13381118,MANUAL_REVIEW or STANDARD_REVIEW
+fraud-baseline-public,fraud_review_recommendation,manual_review_count,2242.0,True,Zenodo 13381118,threshold >= 0.5
+fraud-baseline-public,fraud_review_recommendation,manual_review_rate,0.2242,True,Zenodo 13381118,threshold >= 0.5

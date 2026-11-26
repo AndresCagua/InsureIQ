@@ -51,6 +51,68 @@ def export_bi(processed_dir: Path, output_dir: Path) -> dict[str, object]:
         )
         ml_frame.to_csv(output_dir / "ml_fraud_metrics.csv", index=False)
         exported["ml_fraud_metrics.csv"] = len(ml_frame)
+        benchmark_path = processed_dir / "public_vehicle_fraud_benchmark.csv"
+        artifact_path = Path("reports/fraud_model.joblib")
+        if benchmark_path.exists() and artifact_path.exists():
+            import joblib
+
+            benchmark = pd.read_csv(benchmark_path)
+            model = joblib.load(artifact_path)
+            feature_columns = report.get("feature_columns", [
+                column for column in benchmark.columns if column != "fraud"
+            ])
+            probabilities = model.predict_proba(
+                benchmark.drop(columns=["fraud"]).reindex(columns=feature_columns)
+            )[:, 1]
+            scored = benchmark[[
+                column
+                for column in [
+                    "policy_number",
+                    "total_claim_amount",
+                    "incident_severity",
+                    "incident_type",
+                    "fraud",
+                ]
+                if column in benchmark.columns
+            ]].copy()
+            scored["fraud_probability"] = probabilities
+            scored["recommendation"] = scored["fraud_probability"].map(
+                lambda value: "MANUAL_REVIEW" if value >= 0.5 else "STANDARD_REVIEW"
+            )
+            queue = scored[scored["recommendation"] == "MANUAL_REVIEW"].sort_values(
+                "fraud_probability", ascending=False
+            )
+            queue.to_csv(output_dir / "fraud_review_queue.csv", index=False)
+            exported["fraud_review_queue.csv"] = len(queue)
+            ml_frame = pd.concat(
+                [
+                    ml_frame,
+                    pd.DataFrame(
+                        [
+                            {
+                                "model": "fraud-baseline-public",
+                                "task": "fraud_review_recommendation",
+                                "metric": "manual_review_count",
+                                "value": len(queue),
+                                "is_ml": True,
+                                "benchmark": "Zenodo 13381118",
+                                "recommendation_policy": "threshold >= 0.5",
+                            },
+                            {
+                                "model": "fraud-baseline-public",
+                                "task": "fraud_review_recommendation",
+                                "metric": "manual_review_rate",
+                                "value": len(queue) / len(scored),
+                                "is_ml": True,
+                                "benchmark": "Zenodo 13381118",
+                                "recommendation_policy": "threshold >= 0.5",
+                            },
+                        ]
+                    ),
+                ],
+                ignore_index=True,
+            )
+            ml_frame.to_csv(output_dir / "ml_fraud_metrics.csv", index=False)
     (output_dir / "manifest.json").write_text(
         json.dumps({"exports": exported, "fixture": "golden_kpis.json"}, indent=2),
         encoding="utf-8",

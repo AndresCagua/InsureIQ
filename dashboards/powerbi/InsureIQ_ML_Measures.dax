@@ -22,3 +22,15 @@ IF(
     "fraud-baseline-public",
     "No disponible"
 )
+
+Casos para Revisión Manual =
+CALCULATE(
+    MAX(ml_fraud_metrics[value]),
+    ml_fraud_metrics[metric] = "manual_review_count"
+)
+
+Tasa de Revisión Manual =
+CALCULATE(
+    MAX(ml_fraud_metrics[value]),
+    ml_fraud_metrics[metric] = "manual_review_rate"
+)

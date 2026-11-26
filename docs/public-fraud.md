@@ -33,6 +33,14 @@ reports/fraud_model.joblib
 reports/model_registry.json
 ```
 
+Después de `make bi-data`, el scoring batch genera también:
+
+```text
+dashboards/exports/fraud_review_queue.csv
+```
+
+Contiene los casos del benchmark con probabilidad `>= 0,5`, ordenados de mayor a menor, junto con `policy_number`, monto, severidad, tipo de incidente, etiqueta publicada, probabilidad y recomendación. Es una cola de priorización del benchmark, no una decisión real de aseguramiento.
+
 ## Etiqueta
 
 La columna original `fraud_reported` se conserva semánticamente y se transforma así:

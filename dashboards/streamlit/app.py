@@ -40,6 +40,11 @@ if fraud_metrics_path.exists():
     ml_metrics = pd.read_csv(fraud_metrics_path)
     st.success("Modelo ML disponible: benchmark público Zenodo 13381118")
     st.dataframe(ml_metrics, use_container_width=True)
+    queue_path = Path("dashboards/exports/fraud_review_queue.csv")
+    if queue_path.exists():
+        queue = pd.read_csv(queue_path)
+        st.metric("Casos priorizados para revisión manual", len(queue))
+        st.dataframe(queue, use_container_width=True)
     st.caption(
         "Las métricas son del benchmark publicado; no son validación "
         "ecuatoriana ni producción."

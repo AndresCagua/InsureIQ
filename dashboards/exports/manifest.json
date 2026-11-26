@@ -8,7 +8,8 @@
     "public_iowa_crashes_summary.csv": 822,
     "public_vehicle_fraud_benchmark.csv": 10000,
     "quarantine_claims.csv": 0,
-    "ml_fraud_metrics.csv": 3
+    "ml_fraud_metrics.csv": 3,
+    "fraud_review_queue.csv": 2242
   },
   "fixture": "golden_kpis.json"
 }

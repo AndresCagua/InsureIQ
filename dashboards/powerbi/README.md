@@ -26,7 +26,7 @@ Después de ejecutar `make fraud-train` y `make bi-data`, cargá también:
 dashboards/exports/ml_fraud_metrics.csv
 ```
 
-Usá las medidas de `InsureIQ_ML_Measures.dax` para mostrar ROC-AUC, average precision, filas de prueba y modelo activo. Etiquetá la página como **Benchmark ML público — no producción**.
+Usá las medidas de `InsureIQ_ML_Measures.dax` para mostrar ROC-AUC, average precision, filas de prueba, modelo activo, casos para revisión manual y tasa de revisión. Cargá también `dashboards/exports/fraud_review_queue.csv` para una tabla filtrable de casos. Etiquetá la página como **Benchmark ML público — no producción**.
 
 ## Publicación
 
