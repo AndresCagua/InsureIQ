@@ -11,6 +11,7 @@ from insureiq.bi import export_bi
 from insureiq.etl import run_etl
 from insureiq.forecast import forecast_from_path
 from insureiq.fraud import train_from_path
+from insureiq.fraud_benchmark import download_fraud_benchmark
 from insureiq.public_data import download_iowa_crashes
 from insureiq.risk import train_from_paths
 from insureiq.statistics import claims_summary, quality_report
@@ -47,6 +48,7 @@ if __name__ == "__main__":
             "forecast",
             "bi",
             "public-data",
+            "public-fraud",
         ),
     )
     parser.add_argument("--raw-dir", default="data/synthetic")
@@ -69,7 +71,13 @@ if __name__ == "__main__":
         claims = claims_summary(Path(args.processed_dir) / "fact_claim.csv")
         print(f"Informe estadístico generado: {len(report['tables'])} tablas; resumen: {claims}")
     elif args.command == "fraud":
-        metrics = train_from_path(Path(args.benchmark), Path(args.report), target="fraud")
+        metrics = train_from_path(
+            Path(args.benchmark),
+            Path(args.report),
+            target="fraud",
+            artifact_path=Path("reports/fraud_model.joblib"),
+            registry_path=Path("reports/model_registry.json"),
+        )
         print(f"Baseline de fraude entrenado: {metrics}")
     elif args.command == "risk":
         metrics = train_from_paths(
@@ -87,5 +95,10 @@ if __name__ == "__main__":
             Path("data/raw/public_iowa_vehicle_crashes"), Path("data/processed")
         )
         print(f"Datos públicos descargados: {metadata}")
+    elif args.command == "public-fraud":
+        metadata = download_fraud_benchmark(
+            Path("data/raw/public_vehicle_fraud_benchmark"), Path("data/processed")
+        )
+        print(f"Benchmark público de fraude descargado: {metadata}")
     else:
         doctor()

@@ -6,11 +6,13 @@ import json
 from pathlib import Path
 from uuid import uuid4
 
+import pandas as pd
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="InsureIQ API", version="0.1.0")
 MODEL_REGISTRY = Path("reports/model_registry.json")
+MODEL_ARTIFACT = Path("reports/fraud_model.joblib")
 
 
 class FraudRequest(BaseModel):
@@ -32,8 +34,8 @@ def health() -> dict[str, str]:
 
 @app.get("/ready")
 def ready() -> dict[str, str]:
-    if not MODEL_REGISTRY.exists():
-        raise HTTPException(status_code=503, detail="No hay registro de modelos disponible")
+    if not MODEL_REGISTRY.exists() or not MODEL_ARTIFACT.exists():
+        raise HTTPException(status_code=503, detail="No hay modelo de fraude entrenado disponible")
     return {"status": "ready"}
 
 
@@ -46,13 +48,29 @@ def models() -> dict:
 
 @app.post("/api/v1/fraud/predict")
 def fraud_predict(request: FraudRequest) -> dict:
-    raise HTTPException(
-        status_code=503,
-        detail=(
-            "El modelo de fraude no está disponible; descargue un benchmark "
-            "y entrene el modelo."
-        ),
-    )
+    if not MODEL_REGISTRY.exists() or not MODEL_ARTIFACT.exists():
+        raise HTTPException(
+            status_code=503,
+            detail="El modelo de fraude no está disponible; ejecute make fraud-train.",
+        )
+    try:
+        import joblib
+
+        registry = json.loads(MODEL_REGISTRY.read_text(encoding="utf-8"))
+        model_info = registry["models"][0]
+        columns = model_info["feature_columns"]
+        model = joblib.load(MODEL_ARTIFACT)
+        features = pd.DataFrame([request.features]).reindex(columns=columns)
+        probability = float(model.predict_proba(features)[0, 1])
+    except (KeyError, OSError, ValueError, IndexError) as exc:
+        raise HTTPException(status_code=503, detail=f"No se pudo cargar el modelo: {exc}") from exc
+    return {
+        "claim_id": request.claim_id,
+        "fraud_probability": probability,
+        "recommendation": "MANUAL_REVIEW" if probability >= 0.5 else "STANDARD_REVIEW",
+        "model": model_info["name"],
+        "disclaimer": "Resultado de benchmark público; requiere revisión humana.",
+    }
 
 
 @app.get("/api/v1/forecasts")

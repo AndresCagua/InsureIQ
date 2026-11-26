@@ -15,6 +15,11 @@ htmlcov/
 data/raw/
 data/processed/public_iowa_crashes_*.csv
 data/processed/public_iowa_crashes_*.json
+data/raw/public_vehicle_fraud_benchmark/
+data/processed/public_vehicle_fraud_benchmark.csv
+data/processed/public_vehicle_fraud_benchmark_metadata.json
+reports/fraud_model.joblib
+reports/model_registry.json
 data/processed/
 data/synthetic/
 mlruns/

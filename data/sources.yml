@@ -38,21 +38,21 @@ sources:
 
   - source_dataset: public_vehicle_fraud_benchmark
     purpose: benchmark supervisado de fraude
-    discovery_url: https://www.kaggle.com/datasets
-    resolved_url: null
-    dataset_version: null
-    license: null
-    attribution: null
-    retrieval_date: null
-    sha256: null
-    schema: null
-    row_count: null
-    geography: null
-    currency: null
-    target_definition: fraude confirmado según la fuente original
-    redistribution_policy: pendiente de verificación; puede requerir descarga manual
-    verified: false
-    status: pending_verification
+    discovery_url: https://zenodo.org/records/13381118
+    resolved_url: https://zenodo.org/api/records/13381118/files/US%20Insurance%20Claims%20Data.xlsx/content
+    dataset_version: 10.5281/zenodo.13381118
+    license: CC BY 4.0
+    attribution: Ndinguri via Zenodo
+    retrieval_date: 2026-11-26
+    sha256: c1c2ac62dd3cf2089d4fff20bc12ce375fb61890c9bde83e496925193931cb21
+    schema: XLSX convertido a CSV; 39 features y fraud_reported mapeado a fraud
+    row_count: 10000
+    geography: Estados Unidos según la descripción publicada
+    currency: USD
+    target_definition: fraud_reported publicado por la fuente, Y=1 y N=0
+    redistribution_policy: redistribuible con atribución CC BY 4.0
+    verified: true
+    status: downloaded_and_converted
 
   - source_dataset: iowa_vehicle_crashes
     purpose: dashboard público de exposición y seguridad vial

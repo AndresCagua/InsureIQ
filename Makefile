@@ -6,10 +6,10 @@ COMPOSE ?= docker compose
 PORTS_TO_CHECK ?= 55432 59000 59001 58080 55000 58000 58501 58888
 PROFILE ?= smoke
 
-.PHONY: help bootstrap doctor build test lint security-check performance data-fetch data-generate public-data etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
+.PHONY: help bootstrap doctor build test lint security-check performance data-fetch data-generate public-data public-fraud etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
 
 help:
-	@printf '%s\n' 'Targets: bootstrap doctor build test lint security-check performance data-fetch data-generate public-data etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
+	@printf '%s\n' 'Targets: bootstrap doctor build test lint security-check performance data-fetch data-generate public-data public-fraud etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
 
 bootstrap:
 	$(COMPOSE) build python
@@ -74,6 +74,9 @@ data-generate:
 public-data:
 	$(COMPOSE) run --rm python python -m insureiq.cli public-data
 
+public-fraud:
+	$(COMPOSE) run --rm python python -m insureiq.cli public-fraud
+
 etl:
 	$(COMPOSE) run --rm python python -m insureiq.cli etl
 
@@ -84,8 +87,8 @@ notebooks:
 	@echo 'Ejecuta notebooks dentro del contenedor cuando JupyterLab esté habilitado.'
 	$(COMPOSE) run --rm python python -m insureiq.cli stats
 
-fraud-train:
-	$(COMPOSE) run --rm python python -m insureiq.cli fraud
+fraud-train: public-fraud
+	$(COMPOSE) run --rm python python -m insureiq.cli fraud --benchmark data/processed/public_vehicle_fraud_benchmark.csv --report reports/fraud_metrics.json
 
 risk-train:
 	$(COMPOSE) run --rm python python -m insureiq.cli risk --report reports/risk_metrics.json

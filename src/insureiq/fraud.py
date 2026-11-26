@@ -93,24 +93,52 @@ def train_baseline(
     return model, metrics
 
 
-def train_from_path(path: Path, output_path: Path, target: str = "fraud") -> dict[str, float]:
-    """Train and write metrics plus intended-use limitations."""
+def train_from_path(
+    path: Path,
+    output_path: Path,
+    target: str = "fraud",
+    artifact_path: Path | None = None,
+    registry_path: Path | None = None,
+) -> dict[str, float]:
+    """Train and write metrics, an optional artifact, and registry metadata."""
     features, labels = load_benchmark(path, target)
-    _, metrics = train_baseline(features, labels)
+    model, metrics = train_baseline(features, labels)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(
-        json.dumps(
-            {
-                "metrics": metrics,
-                "target": target,
-                "recommendation": "MANUAL_REVIEW or STANDARD_REVIEW; never auto-deny",
-                "limitations": (
-                    "Benchmark results are not Ecuadorian validation and do not "
-                    "prove fraud causally."
-                ),
-            },
-            indent=2,
+    metadata = {
+        "metrics": metrics,
+        "target": target,
+        "feature_columns": features.columns.tolist(),
+        "recommendation": "MANUAL_REVIEW or STANDARD_REVIEW; never auto-deny",
+        "limitations": (
+            "Benchmark results are not Ecuadorian validation and do not "
+            "prove fraud causally."
         ),
-        encoding="utf-8",
-    )
+    }
+    output_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
+    if artifact_path is not None:
+        import joblib
+
+        artifact_path.parent.mkdir(parents=True, exist_ok=True)
+        joblib.dump(model, artifact_path)
+    if registry_path is not None and artifact_path is not None:
+        registry_path.parent.mkdir(parents=True, exist_ok=True)
+        registry_path.write_text(
+            json.dumps(
+                {
+                    "models": [
+                        {
+                            "name": "fraud-baseline-public",
+                            "task": "fraud_review_recommendation",
+                            "artifact": str(artifact_path),
+                            "metrics_report": str(output_path),
+                            "status": "local_candidate",
+                            "recommendation": "MANUAL_REVIEW or STANDARD_REVIEW",
+                            "feature_columns": features.columns.tolist(),
+                        }
+                    ]
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
     return metrics

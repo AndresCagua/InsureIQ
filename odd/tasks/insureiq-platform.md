@@ -137,6 +137,15 @@ Crear artefactos reproducibles para Power BI y Tableau usando los extracts públ
 
 Salida: paquete Power BI documentado, workbook Tableau verificable, checklist de publicación y evidencia separada de lo que fue creado localmente frente a lo publicado.
 
+### S16 — Benchmark público de fraude y predicción real
+Relacionado con la solicitud posterior del propietario y SPEC §9.1, §9.4.
+
+> "pana esto no puede ser posible \"Pero está bloqueado hasta tener datos públicos de fraude correctamente verificados.\" debemos buscar data publica y crear las predicciones reales no nos podemos quedar con un posble dato"
+
+Incorporar el dataset público Auto Insurance Claims de Zenodo, registro 13381118, acceso abierto y licencia CC BY 4.0. Descargarlo reproduciblemente, verificar checksum, documentar la fuente, convertirlo a un formato procesable y entrenar/evaluar el baseline de fraude. Reportar que la etiqueta es la del dataset publicado y que el benchmark puede no representar Ecuador ni producción.
+
+Salida: benchmark descargable y verificado, modelo entrenado con métricas observadas, reporte de limitaciones y endpoint de predicción habilitado sólo cuando el artefacto local exista.
+
 ## Tasks
 
 - T1 (S1): congelar alcance, idioma y convención de commits — ruta: documentación — commit: no aplica (slice documental completado).
@@ -153,7 +162,8 @@ Salida: paquete Power BI documentado, workbook Tableau verificable, checklist de
 - T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: 20261126 preparar exports BI y capacidades.
 - T13 (S13): cerrar CI, seguridad, rendimiento y entrega — ruta: `.github/`, `docs/`, `reports/`, `README.md`, `tests/` — commit: 20261126 cerrar CI seguridad rendimiento y entrega.
 - T14 (S14): incorporar fuente pública real y dashboards conectados — ruta: `data/`, `src/`, `dashboards/`, `docs/`, `tests/` — commit: 20261126 incorporar datos publicos y dashboards.
-- T15 (S15): crear artefactos Power BI/Tableau y checklist de publicación — ruta: `dashboards/powerbi/`, `dashboards/tableau/`, `docs/` — commit: pendiente.
+- T15 (S15): crear artefactos Power BI/Tableau y checklist de publicación — ruta: `dashboards/powerbi/`, `dashboards/tableau/`, `docs/` — commit: 20261126 preparar dashboards Power BI y Tableau.
+- T16 (S16): incorporar benchmark público de fraude y predicción real — ruta: `data/`, `src/`, `reports/`, `tests/`, `docs/` — commit: pendiente.
 
 ## Log
 
@@ -178,3 +188,4 @@ Salida: paquete Power BI documentado, workbook Tableau verificable, checklist de
 - L19: S12 verificado para preparación BI: `make bi-data` generó exports CSV, `golden_kpis.json` y `manifest.json`; los KPI smoke fueron 2.500 pólizas, 500 claims, 1.235.504,93 USD reclamados y 3.316.175,82 USD de prima emitida sintética. `dashboards/README.md` y `docs/bi-capabilities.md` declaran que Power BI/Tableau Public aún no fueron publicados ni verificados.
 - L20: S13 verificado: `make security-check` pasó; `make performance` midió el smoke en 2,08 s y 42.112 KB; pytest pasó 4 pruebas y Ruff pasó. `docs/implementation-status.md` y `docs/runbook.md` documentan estado, limitaciones y comandos; Azure/BI/MLflow no se reportan como completados.
 - L21: El propietario solicitó incorporar datos reales públicos y completar dashboards. Se selecciona como primera fuente verificable el dataset gubernamental Vehicle Crashes in Iowa, identificado en el catálogo Data.gov/Iowa Data Hub, con descarga CSV y licencia CC BY 4.0 según la evidencia web consultada. Se mantendrá separado de claims sintéticos porque accidentes públicos no son registros de seguros.
+- L22: S16 verificado: Zenodo 13381118 se descargó y convirtió a CSV; 10.000 filas, licencia CC BY 4.0, MD5 publicado validado y SHA256 local `c1c2ac62dd3cf2089d4fff20bc12ce375fb61890c9bde83e496925193931cb21`. `make fraud-train` pasó con ROC-AUC 0,9840985, average precision 0,9146387 y 2.500 filas de prueba; se persistieron `fraud_model.joblib` y `model_registry.json`. `/ready` devolvió 200 y `/api/v1/fraud/predict` produjo probabilidad 0,00210189 y `STANDARD_REVIEW` para el claim de prueba. Se mantienen las limitaciones del benchmark publicado y la prohibición de rechazo automático.
