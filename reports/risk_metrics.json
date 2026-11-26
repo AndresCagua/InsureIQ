@@ -1,0 +1,10 @@
+{
+  "metrics": {
+    "frequency_mae": 0.32704000000000005,
+    "severity_mae": 1363.8923166423,
+    "portfolio_predicted_annual_loss_usd": 1243481.5661549706,
+    "exposure_years": 2500.0
+  },
+  "exposure_convention": "one policy-year per synthetic policy row",
+  "limitations": "Synthetic demonstration; not Ecuadorian actuarial validation."
+}

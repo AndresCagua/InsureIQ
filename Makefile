@@ -6,10 +6,10 @@ COMPOSE ?= docker compose
 PORTS_TO_CHECK ?= 55432 59000 59001 58080 55000 58000 58501 58888
 PROFILE ?= smoke
 
-.PHONY: help bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train dbt-build up down clean
+.PHONY: help bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train dbt-build up down clean
 
 help:
-	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train dbt-build up down clean'
+	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train dbt-build up down clean'
 
 bootstrap:
 	$(COMPOSE) build python
@@ -59,6 +59,9 @@ notebooks:
 
 fraud-train:
 	$(COMPOSE) run --rm python python -m insureiq.cli fraud
+
+risk-train:
+	$(COMPOSE) run --rm python python -m insureiq.cli risk --report reports/risk_metrics.json
 
 dbt-build:
 	@echo 'dbt se habilitará al conectar el perfil de base de datos del almacén.'

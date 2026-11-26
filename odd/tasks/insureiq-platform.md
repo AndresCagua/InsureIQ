@@ -129,7 +129,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - T6 (S6): implementar ETL, dbt, warehouse y DAGs — ruta: `src/`, `dbt/`, `airflow/`, `database/`, `tests/` — commit: 20261126 implementar ETL y almacén dimensional.
 - T7 (S7): implementar estadística y notebooks reproducibles — ruta: `src/statistics/`, `notebooks/`, `reports/`, `tests/` — commit: 20261126 implementar estadística y notebook de calidad.
 - T8 (S8): implementar fraude y tarjeta de modelo — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: 20261126 implementar baseline de fraude.
-- T9 (S9): implementar riesgo, severidad y prima pura — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: pendiente.
+- T9 (S9): implementar riesgo, severidad y prima pura — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: 20261126 implementar riesgo severidad y prima pura.
 - T10 (S10): implementar pronósticos y backtests — ruta: `src/models/`, `notebooks/`, `reports/`, `tests/` — commit: pendiente.
 - T11 (S11): implementar API, Streamlit y MLOps — ruta: `src/api/`, `dashboards/streamlit/`, `infrastructure/`, `tests/` — commit: pendiente.
 - T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: pendiente.
@@ -152,3 +152,4 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L13: S6 verificado: `make etl` transformó el perfil smoke en 1.000 `dim_customer`, 1.200 `dim_vehicle`, 2.500 `dim_policy` y 500 `fact_claim`; produjo `etl_manifest.json`, cuarentena y tablas procesadas. El esquema dimensional SQL, proyecto dbt y DAG declarativo quedaron creados; pytest y Ruff pasaron.
 - L14: S7 verificado: se generó el informe `reports/data_quality.json` con 5 tablas y resumen descriptivo de 500 siniestros; el notebook `notebooks/01_data_quality.ipynb` es JSON válido; pytest y Ruff pasaron dentro del contenedor.
 - L15: S8 verificado: se implementó un baseline logístico con preprocesamiento dentro del pipeline, split estratificado y métricas ROC-AUC/average precision; pytest pasó 2 pruebas y Ruff pasó. `make fraud-train` falla claramente con código 2 cuando no existe el benchmark verificado, sin inventar datos ni métricas.
+- L16: S9 verificado: se implementaron baselines Poisson de frecuencia y Gamma de severidad a granularidad de póliza, con exposición explícita y prima pura; el smoke produjo 2.500 años de exposición y pérdida anual predicha de 1.243.481,57 USD sintéticos. pytest pasó 3 pruebas y Ruff pasó; se documentó que no es validación actuarial ecuatoriana.

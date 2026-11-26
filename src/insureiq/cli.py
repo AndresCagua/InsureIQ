@@ -9,6 +9,7 @@ from pathlib import Path
 
 from insureiq.etl import run_etl
 from insureiq.fraud import train_from_path
+from insureiq.risk import train_from_paths
 from insureiq.statistics import claims_summary, quality_report
 from insureiq.synthetic import main as generate_main
 
@@ -33,7 +34,7 @@ if __name__ == "__main__":
         "command",
         nargs="?",
         default="doctor",
-        choices=("doctor", "generate", "etl", "stats", "fraud"),
+        choices=("doctor", "generate", "etl", "stats", "fraud", "risk"),
     )
     parser.add_argument("--raw-dir", default="data/synthetic")
     parser.add_argument("--processed-dir", default="data/processed")
@@ -41,6 +42,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--benchmark", default="data/raw/public_vehicle_fraud_benchmark/benchmark.csv"
     )
+    parser.add_argument("--policy-path", default="data/processed/dim_policy.csv")
+    parser.add_argument("--claim-path", default="data/processed/fact_claim.csv")
     args, remaining = parser.parse_known_args()
     if args.command == "generate":
         sys.argv = [sys.argv[0], *remaining]
@@ -55,5 +58,10 @@ if __name__ == "__main__":
     elif args.command == "fraud":
         metrics = train_from_path(Path(args.benchmark), Path(args.report), target="fraud")
         print(f"Baseline de fraude entrenado: {metrics}")
+    elif args.command == "risk":
+        metrics = train_from_paths(
+            Path(args.policy_path), Path(args.claim_path), Path(args.report)
+        )
+        print(f"Baselines de riesgo entrenados: {metrics}")
     else:
         doctor()
