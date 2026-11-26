@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environments
+.env
+.venv/
+
+# Data and runtime artifacts
+data/raw/
+data/processed/
+data/synthetic/
+mlruns/
+models/
+*.parquet
+*.hyper
+*.sqlite
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Docker
+volumes/
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/

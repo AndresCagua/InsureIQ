@@ -1,0 +1,3 @@
+profile: smoke
+seed: 42
+records_scale: 0.01

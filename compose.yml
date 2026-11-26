@@ -1,0 +1,16 @@
+name: ${PROJECT_NAME:-insureiq}
+
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: insureiq-dev:local
+    working_dir: /workspace
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - .:/workspace
+    profiles: [core, orchestration, mlops, demo]
+    command: ["python", "-m", "insureiq.cli", "doctor"]
