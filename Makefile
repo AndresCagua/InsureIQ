@@ -6,10 +6,10 @@ COMPOSE ?= docker compose
 PORTS_TO_CHECK ?= 55432 59000 59001 58080 55000 58000 58501 58888
 PROFILE ?= smoke
 
-.PHONY: help bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
+.PHONY: help bootstrap doctor build test lint security-check performance data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
 
 help:
-	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
+	@printf '%s\n' 'Targets: bootstrap doctor build test lint security-check performance data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
 
 bootstrap:
 	$(COMPOSE) build python
@@ -38,6 +38,15 @@ test:
 
 lint:
 	$(COMPOSE) run --rm python ruff check .
+
+security-check:
+	@! git grep -nE '(AKIA[0-9A-Z]{16}|BEGIN (RSA|EC|OPENSSH) PRIVATE KEY|password[[:space:]]*=[[:space:]]*[^$#[:space:]]+)' -- ':!*.lock' ':!.env.example' || (echo 'Posible secreto encontrado' >&2; exit 1)
+	@echo 'Secret scan estructural: OK'
+
+performance:
+	@/usr/bin/time -f 'elapsed_seconds=%e\nmax_memory_kb=%M' -o /tmp/insureiq-performance.txt $(MAKE) data-generate PROFILE=smoke
+	@cat /tmp/insureiq-performance.txt
+	@echo 'Medición temporal guardada en /tmp/insureiq-performance.txt'
 
 data-fetch:
 	@echo 'No hay fuentes públicas verificadas para descargar todavía.' >&2
