@@ -1,0 +1,94 @@
+{
+  "data_dir": "data/processed",
+  "tables": {
+    "dim_customer": {
+      "rows": 1000,
+      "columns": 4,
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "numeric_summary": {
+        "age": {
+          "count": 1000.0,
+          "mean": 46.676,
+          "std": 16.73,
+          "min": 18.0,
+          "25%": 32.0,
+          "50%": 47.0,
+          "75%": 61.0,
+          "max": 75.0
+        }
+      }
+    },
+    "dim_policy": {
+      "rows": 2500,
+      "columns": 6,
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "numeric_summary": {
+        "annual_premium_usd": {
+          "count": 2500.0,
+          "mean": 1326.4703,
+          "std": 623.9478,
+          "min": 250.03,
+          "25%": 777.765,
+          "50%": 1345.155,
+          "75%": 1849.62,
+          "max": 2398.85
+        }
+      }
+    },
+    "dim_vehicle": {
+      "rows": 1200,
+      "columns": 5,
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "numeric_summary": {
+        "model_year": {
+          "count": 1200.0,
+          "mean": 2019.4325,
+          "std": 3.475,
+          "min": 2014.0,
+          "25%": 2016.0,
+          "50%": 2019.0,
+          "75%": 2022.0,
+          "max": 2025.0
+        },
+        "vehicle_value_usd": {
+          "count": 1200.0,
+          "mean": 31614.6408,
+          "std": 13504.7957,
+          "min": 8000.0,
+          "25%": 20056.0,
+          "50%": 31932.0,
+          "75%": 43481.75,
+          "max": 54988.0
+        }
+      }
+    },
+    "fact_claim": {
+      "rows": 500,
+      "columns": 5,
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "numeric_summary": {
+        "claimed_amount_usd": {
+          "count": 500.0,
+          "mean": 2471.0099,
+          "std": 1805.5956,
+          "min": 20.94,
+          "25%": 1114.4925,
+          "50%": 2091.695,
+          "75%": 3342.745,
+          "max": 11804.03
+        }
+      }
+    },
+    "quarantine_claims": {
+      "rows": 0,
+      "columns": 5,
+      "missing_values": 0,
+      "duplicate_rows": 0,
+      "numeric_summary": {}
+    }
+  }
+}
