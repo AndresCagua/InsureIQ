@@ -1,0 +1,24 @@
+ROC AUC ML =
+CALCULATE(
+    MAX(ml_fraud_metrics[value]),
+    ml_fraud_metrics[metric] = "roc_auc"
+)
+
+Average Precision ML =
+CALCULATE(
+    MAX(ml_fraud_metrics[value]),
+    ml_fraud_metrics[metric] = "average_precision"
+)
+
+Filas de Prueba ML =
+CALCULATE(
+    MAX(ml_fraud_metrics[value]),
+    ml_fraud_metrics[metric] = "test_rows"
+)
+
+Modelo ML Activo =
+IF(
+    COUNTROWS(ml_fraud_metrics) > 0,
+    "fraud-baseline-public",
+    "No disponible"
+)

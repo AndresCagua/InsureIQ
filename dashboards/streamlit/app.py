@@ -34,7 +34,17 @@ if forecast_path.exists():
 else:
     st.info("Ejecuta `make forecast` para generar el reporte de pronóstico.")
 
-st.header("Predicción de fraude")
-st.warning("El modelo no está disponible hasta verificar y registrar un benchmark público.")
+st.header("Resultados ML de fraude")
+fraud_metrics_path = Path("dashboards/exports/ml_fraud_metrics.csv")
+if fraud_metrics_path.exists():
+    ml_metrics = pd.read_csv(fraud_metrics_path)
+    st.success("Modelo ML disponible: benchmark público Zenodo 13381118")
+    st.dataframe(ml_metrics, use_container_width=True)
+    st.caption(
+        "Las métricas son del benchmark publicado; no son validación "
+        "ecuatoriana ni producción."
+    )
+else:
+    st.warning("Ejecutá `make fraud-train` y `make bi-data` para exportar las métricas ML.")
 st.text_input("ID de siniestro", placeholder="DEMO-001")
 st.button("Consultar modelo", disabled=True)

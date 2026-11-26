@@ -31,6 +31,26 @@ def export_bi(processed_dir: Path, output_dir: Path) -> dict[str, object]:
     (output_dir / "golden_kpis.json").write_text(
         json.dumps(fixture, indent=2), encoding="utf-8"
     )
+    fraud_report = Path("reports/fraud_metrics.json")
+    if fraud_report.exists():
+        report = json.loads(fraud_report.read_text(encoding="utf-8"))
+        metrics = report.get("metrics", {})
+        ml_frame = pd.DataFrame(
+            [
+                {
+                    "model": "fraud-baseline-public",
+                    "task": "fraud_review_recommendation",
+                    "metric": metric,
+                    "value": value,
+                    "is_ml": True,
+                    "benchmark": "Zenodo 13381118",
+                    "recommendation_policy": "MANUAL_REVIEW or STANDARD_REVIEW",
+                }
+                for metric, value in metrics.items()
+            ]
+        )
+        ml_frame.to_csv(output_dir / "ml_fraud_metrics.csv", index=False)
+        exported["ml_fraud_metrics.csv"] = len(ml_frame)
     (output_dir / "manifest.json").write_text(
         json.dumps({"exports": exported, "fixture": "golden_kpis.json"}, indent=2),
         encoding="utf-8",

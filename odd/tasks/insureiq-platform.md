@@ -146,6 +146,15 @@ Incorporar el dataset público Auto Insurance Claims de Zenodo, registro 1338111
 
 Salida: benchmark descargable y verificado, modelo entrenado con métricas observadas, reporte de limitaciones y endpoint de predicción habilitado sólo cuando el artefacto local exista.
 
+### S17 — Exponer resultados ML en dashboards
+Relacionado con la solicitud posterior del propietario: el portafolio debe mostrar claramente qué fue hecho con ML.
+
+> "en los dasboards no hay ninguna medida label de lo hecho con ML ????"
+
+Exportar métricas y estado del modelo de fraude como una fuente BI separada, añadir etiquetas visibles de benchmark/ML y conectar el dashboard local. No mezclar métricas ML con agregados de accidentes ni presentarlas como validación productiva.
+
+Salida: extract ML para Power BI/Tableau, medidas documentadas, panel Streamlit y etiquetas de limitación.
+
 ## Tasks
 
 - T1 (S1): congelar alcance, idioma y convención de commits — ruta: documentación — commit: no aplica (slice documental completado).
@@ -163,7 +172,8 @@ Salida: benchmark descargable y verificado, modelo entrenado con métricas obser
 - T13 (S13): cerrar CI, seguridad, rendimiento y entrega — ruta: `.github/`, `docs/`, `reports/`, `README.md`, `tests/` — commit: 20261126 cerrar CI seguridad rendimiento y entrega.
 - T14 (S14): incorporar fuente pública real y dashboards conectados — ruta: `data/`, `src/`, `dashboards/`, `docs/`, `tests/` — commit: 20261126 incorporar datos publicos y dashboards.
 - T15 (S15): crear artefactos Power BI/Tableau y checklist de publicación — ruta: `dashboards/powerbi/`, `dashboards/tableau/`, `docs/` — commit: 20261126 preparar dashboards Power BI y Tableau.
-- T16 (S16): incorporar benchmark público de fraude y predicción real — ruta: `data/`, `src/`, `reports/`, `tests/`, `docs/` — commit: pendiente.
+- T16 (S16): incorporar benchmark público de fraude y predicción real — ruta: `data/`, `src/`, `reports/`, `tests/`, `docs/` — commit: 20261126 habilitar benchmark publico de fraude.
+- T17 (S17): exponer métricas ML en dashboards — ruta: `src/`, `dashboards/`, `docs/`, `tests/` — commit: pendiente.
 
 ## Log
 

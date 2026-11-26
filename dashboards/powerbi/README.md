@@ -18,6 +18,16 @@ Este directorio contiene el paquete reproducible de fuente, modelo, medidas y la
 
 La tabla tiene cuatro campos: `dimension`, `category`, `period` y `crashes`. El campo `dimension` separa los agregados de mes/severidad, severidad y condado. No sumes simultáneamente todas las dimensiones para reportar un KPI: filtra una dimensión específica para evitar doble conteo.
 
+## Métricas ML
+
+Después de ejecutar `make fraud-train` y `make bi-data`, cargá también:
+
+```text
+dashboards/exports/ml_fraud_metrics.csv
+```
+
+Usá las medidas de `InsureIQ_ML_Measures.dax` para mostrar ROC-AUC, average precision, filas de prueba y modelo activo. Etiquetá la página como **Benchmark ML público — no producción**.
+
 ## Publicación
 
 La publicación requiere una cuenta/workspace autenticado y aprobación del propietario. No se ejecuta desde el repositorio ni se guardan credenciales.

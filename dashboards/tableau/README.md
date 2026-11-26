@@ -23,6 +23,16 @@ La tabla contiene agregados de tres dimensiones. Para un KPI, filtrá una dimens
 
 No sumes las tres dimensiones juntas.
 
+## Métricas ML
+
+Después de ejecutar `make fraud-train` y `make bi-data`, agregá la fuente:
+
+```text
+dashboards/exports/ml_fraud_metrics.csv
+```
+
+Creá una hoja **Métricas ML** con `metric` en filas y `value` en texto, filtrando `model = fraud-baseline-public`. Mostrá una nota: **Benchmark ML público — no producción**.
+
 ## Publicación
 
 Tableau Public hace el contenido público. Tableau Cloud/Server requiere workspace y permisos. La publicación queda pendiente de una sesión autenticada del propietario.
