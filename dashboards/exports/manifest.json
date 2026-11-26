@@ -1,0 +1,10 @@
+{
+  "exports": {
+    "dim_customer.csv": 1000,
+    "dim_policy.csv": 2500,
+    "dim_vehicle.csv": 1200,
+    "fact_claim.csv": 500,
+    "quarantine_claims.csv": 0
+  },
+  "fixture": "golden_kpis.json"
+}

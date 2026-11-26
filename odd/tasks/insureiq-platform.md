@@ -132,7 +132,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - T9 (S9): implementar riesgo, severidad y prima pura — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: 20261126 implementar riesgo severidad y prima pura.
 - T10 (S10): implementar pronósticos y backtests — ruta: `src/models/`, `notebooks/`, `reports/`, `tests/` — commit: 20261126 implementar pronóstico y backtesting.
 - T11 (S11): implementar API, Streamlit y MLOps — ruta: `src/api/`, `dashboards/streamlit/`, `infrastructure/`, `tests/` — commit: 20261126 implementar API y demo Streamlit.
-- T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: pendiente.
+- T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: 20261126 preparar exports BI y capacidades.
 - T13 (S13): cerrar CI, seguridad, rendimiento y entrega — ruta: `.github/`, `docs/`, `reports/`, `README.md`, `tests/` — commit: pendiente.
 
 ## Log
@@ -155,3 +155,4 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L16: S9 verificado: se implementaron baselines Poisson de frecuencia y Gamma de severidad a granularidad de póliza, con exposición explícita y prima pura; el smoke produjo 2.500 años de exposición y pérdida anual predicha de 1.243.481,57 USD sintéticos. pytest pasó 3 pruebas y Ruff pasó; se documentó que no es validación actuarial ecuatoriana.
 - L17: S10 verificado: se implementó serie mensual de siniestros, baseline naive estacional de 12 meses y backtesting rolling-origin de 48 puntos; MAE 3,4375, RMSE 4,0850 y cobertura ilustrativa 0,9792. pytest pasó 3 pruebas y Ruff pasó; los intervalos se etiquetan como no calibrados.
 - L18: S11 parcial verificado: FastAPI versionada, health/ready/models/fraud/forecasts/metrics, correlation ID, demo Streamlit y perfiles Compose `demo` quedaron creados; pytest pasó 4 pruebas, Ruff pasó, `/health` devolvió `{"status":"ok"}` y API/Streamlit iniciaron en 58000/58501. La inferencia queda 503 hasta registrar un benchmark/modelo verificado; MLflow registry completo queda pendiente.
+- L19: S12 verificado para preparación BI: `make bi-data` generó exports CSV, `golden_kpis.json` y `manifest.json`; los KPI smoke fueron 2.500 pólizas, 500 claims, 1.235.504,93 USD reclamados y 3.316.175,82 USD de prima emitida sintética. `dashboards/README.md` y `docs/bi-capabilities.md` declaran que Power BI/Tableau Public aún no fueron publicados ni verificados.

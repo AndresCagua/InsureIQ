@@ -7,6 +7,7 @@ import os
 import sys
 from pathlib import Path
 
+from insureiq.bi import export_bi
 from insureiq.etl import run_etl
 from insureiq.forecast import forecast_from_path
 from insureiq.fraud import train_from_path
@@ -35,7 +36,7 @@ if __name__ == "__main__":
         "command",
         nargs="?",
         default="doctor",
-        choices=("doctor", "generate", "etl", "stats", "fraud", "risk", "forecast"),
+        choices=("doctor", "generate", "etl", "stats", "fraud", "risk", "forecast", "bi"),
     )
     parser.add_argument("--raw-dir", default="data/synthetic")
     parser.add_argument("--processed-dir", default="data/processed")
@@ -67,5 +68,8 @@ if __name__ == "__main__":
     elif args.command == "forecast":
         metrics = forecast_from_path(Path(args.claim_path), Path(args.report))
         print(f"Backtest de pronóstico completado: {metrics}")
+    elif args.command == "bi":
+        fixture = export_bi(Path(args.processed_dir), Path("dashboards/exports"))
+        print(f"Exports BI generados: {fixture}")
     else:
         doctor()

@@ -1,0 +1,9 @@
+{
+  "currency": "USD",
+  "is_synthetic": true,
+  "policy_count": 2500,
+  "claim_count": 500,
+  "claimed_amount_usd": 1235504.93,
+  "written_premium_usd": 3316175.82,
+  "source": "synthetic_ecuador_insurer"
+}

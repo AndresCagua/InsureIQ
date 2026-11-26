@@ -6,10 +6,10 @@ COMPOSE ?= docker compose
 PORTS_TO_CHECK ?= 55432 59000 59001 58080 55000 58000 58501 58888
 PROFILE ?= smoke
 
-.PHONY: help bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast api streamlit dbt-build up down clean
+.PHONY: help bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
 
 help:
-	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast api streamlit dbt-build up down clean'
+	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
 
 bootstrap:
 	$(COMPOSE) build python
@@ -65,6 +65,9 @@ risk-train:
 
 forecast:
 	$(COMPOSE) run --rm python python -m insureiq.cli forecast --report reports/forecast_metrics.json
+
+bi-data:
+	$(COMPOSE) run --rm python python -m insureiq.cli bi
 
 api:
 	$(COMPOSE) --profile demo up api
