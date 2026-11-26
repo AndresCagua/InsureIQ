@@ -11,6 +11,7 @@ from insureiq.bi import export_bi
 from insureiq.etl import run_etl
 from insureiq.forecast import forecast_from_path
 from insureiq.fraud import train_from_path
+from insureiq.public_data import download_iowa_crashes
 from insureiq.risk import train_from_paths
 from insureiq.statistics import claims_summary, quality_report
 from insureiq.synthetic import main as generate_main
@@ -36,7 +37,17 @@ if __name__ == "__main__":
         "command",
         nargs="?",
         default="doctor",
-        choices=("doctor", "generate", "etl", "stats", "fraud", "risk", "forecast", "bi"),
+        choices=(
+            "doctor",
+            "generate",
+            "etl",
+            "stats",
+            "fraud",
+            "risk",
+            "forecast",
+            "bi",
+            "public-data",
+        ),
     )
     parser.add_argument("--raw-dir", default="data/synthetic")
     parser.add_argument("--processed-dir", default="data/processed")
@@ -71,5 +82,10 @@ if __name__ == "__main__":
     elif args.command == "bi":
         fixture = export_bi(Path(args.processed_dir), Path("dashboards/exports"))
         print(f"Exports BI generados: {fixture}")
+    elif args.command == "public-data":
+        metadata = download_iowa_crashes(
+            Path("data/raw/public_iowa_vehicle_crashes"), Path("data/processed")
+        )
+        print(f"Datos públicos descargados: {metadata}")
     else:
         doctor()

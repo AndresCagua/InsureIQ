@@ -119,6 +119,15 @@ Completar CI Ubuntu, Ruff, pytest, dbt tests, smoke pipeline, secret/dependency 
 
 Salida: definición de terminado comprobada y lista de desviaciones, comandos, artefactos, enlaces y acciones manuales.
 
+### S14 — Datos públicos reales y dashboards utilizables
+Relacionado con la solicitud posterior del propietario y SPEC §4, §6, §10 y §11.
+
+> "crea todo lo necesario para los dashboard ademas hay que cargarle data real que sea publica y gratuita, encargate de eso, sube, carga y crea todo lo necesario que sin eso el proyecto esta sin terminar"
+
+Incorporar una fuente gubernamental pública y gratuita, separada de los datos sintéticos de seguros cuando no represente claims de seguros. Registrar URL, licencia, fecha de descarga, hash y limitaciones; descargar dentro del flujo reproducible, transformar a un extract BI y conectar el dashboard local. No inventar datos de pólizas ni claims a partir de accidentes. Los archivos PBIX/TWB sólo se pueden entregar si se crean en las herramientas propietarias correspondientes; generar en su lugar un dashboard local verificable y paquetes de datos/modelo documentados.
+
+Salida: fuente pública descargable, extract reproducible, dashboard local con selector de fuente y documentación de carga para Power BI/Tableau.
+
 ## Tasks
 
 - T1 (S1): congelar alcance, idioma y convención de commits — ruta: documentación — commit: no aplica (slice documental completado).
@@ -134,6 +143,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - T11 (S11): implementar API, Streamlit y MLOps — ruta: `src/api/`, `dashboards/streamlit/`, `infrastructure/`, `tests/` — commit: 20261126 implementar API y demo Streamlit.
 - T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: 20261126 preparar exports BI y capacidades.
 - T13 (S13): cerrar CI, seguridad, rendimiento y entrega — ruta: `.github/`, `docs/`, `reports/`, `README.md`, `tests/` — commit: 20261126 cerrar CI seguridad rendimiento y entrega.
+- T14 (S14): incorporar fuente pública real y dashboards conectados — ruta: `data/`, `src/`, `dashboards/`, `docs/`, `tests/` — commit: pendiente.
 
 ## Log
 
@@ -157,3 +167,4 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L18: S11 parcial verificado: FastAPI versionada, health/ready/models/fraud/forecasts/metrics, correlation ID, demo Streamlit y perfiles Compose `demo` quedaron creados; pytest pasó 4 pruebas, Ruff pasó, `/health` devolvió `{"status":"ok"}` y API/Streamlit iniciaron en 58000/58501. La inferencia queda 503 hasta registrar un benchmark/modelo verificado; MLflow registry completo queda pendiente.
 - L19: S12 verificado para preparación BI: `make bi-data` generó exports CSV, `golden_kpis.json` y `manifest.json`; los KPI smoke fueron 2.500 pólizas, 500 claims, 1.235.504,93 USD reclamados y 3.316.175,82 USD de prima emitida sintética. `dashboards/README.md` y `docs/bi-capabilities.md` declaran que Power BI/Tableau Public aún no fueron publicados ni verificados.
 - L20: S13 verificado: `make security-check` pasó; `make performance` midió el smoke en 2,08 s y 42.112 KB; pytest pasó 4 pruebas y Ruff pasó. `docs/implementation-status.md` y `docs/runbook.md` documentan estado, limitaciones y comandos; Azure/BI/MLflow no se reportan como completados.
+- L21: El propietario solicitó incorporar datos reales públicos y completar dashboards. Se selecciona como primera fuente verificable el dataset gubernamental Vehicle Crashes in Iowa, identificado en el catálogo Data.gov/Iowa Data Hub, con descarga CSV y licencia CC BY 4.0 según la evidencia web consultada. Se mantendrá separado de claims sintéticos porque accidentes públicos no son registros de seguros.

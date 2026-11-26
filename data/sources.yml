@@ -54,6 +54,24 @@ sources:
     verified: false
     status: pending_verification
 
+  - source_dataset: iowa_vehicle_crashes
+    purpose: dashboard público de exposición y seguridad vial
+    discovery_url: https://catalog.data.gov/dataset/vehicle-crashes-in-iowa
+    resolved_url: https://idh-be.iowa.gov/api/v1/datasets/13/rows.csv
+    dataset_version: dataset-13
+    license: CC BY 4.0
+    attribution: Iowa Data Hub / Iowa Department of Transportation
+    retrieval_date: 2026-11-26
+    sha256: 610c906d2e63140e2d7d45a42f5460f0c9e4a4939580f84ab17f23a71d718e7d
+    schema: 40 columnas; ver data/README.md y metadata descargada
+    row_count: 641878
+    geography: Iowa, Estados Unidos
+    currency: null
+    target_definition: accidentes vehiculares; no es claim de seguros
+    redistribution_policy: redistribuible con atribución CC BY 4.0
+    verified: true
+    status: downloaded_and_summarized
+
   - source_dataset: synthetic_ecuador_insurer
     purpose: almacén, BI, escenarios, pronóstico y demo
     discovery_url: null

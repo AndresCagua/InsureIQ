@@ -13,6 +13,8 @@ htmlcov/
 
 # Data and runtime artifacts
 data/raw/
+data/processed/public_iowa_crashes_*.csv
+data/processed/public_iowa_crashes_*.json
 data/processed/
 data/synthetic/
 mlruns/

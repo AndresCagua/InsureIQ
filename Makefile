@@ -6,10 +6,10 @@ COMPOSE ?= docker compose
 PORTS_TO_CHECK ?= 55432 59000 59001 58080 55000 58000 58501 58888
 PROFILE ?= smoke
 
-.PHONY: help bootstrap doctor build test lint security-check performance data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
+.PHONY: help bootstrap doctor build test lint security-check performance data-fetch data-generate public-data etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean
 
 help:
-	@printf '%s\n' 'Targets: bootstrap doctor build test lint security-check performance data-fetch data-generate etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
+	@printf '%s\n' 'Targets: bootstrap doctor build test lint security-check performance data-fetch data-generate public-data etl statistics notebooks fraud-train risk-train forecast bi-data api streamlit dbt-build up down clean'
 
 bootstrap:
 	$(COMPOSE) build python
@@ -20,9 +20,24 @@ build:
 doctor:
 	@set -e; \
 	conflicts=0; \
+	owned_by_compose() { \
+		case "$$1" in \
+			55432) service=postgres; internal=5432 ;; \
+			59000) service=minio; internal=9000 ;; \
+			59001) service=minio; internal=9001 ;; \
+			58000) service=api; internal=8000 ;; \
+			58501) service=streamlit; internal=8501 ;; \
+			*) return 1 ;; \
+		esac; \
+		$(COMPOSE) port "$$service" "$$internal" 2>/dev/null | grep -qE ":$$1$$"; \
+	}; \
 	for port in $(PORTS_TO_CHECK); do \
 		if (echo >/dev/tcp/127.0.0.1/$$port) >/dev/null 2>&1; then \
-			echo "Puerto ocupado: $$port"; conflicts=1; \
+			if owned_by_compose "$$port"; then \
+				echo "Puerto ocupado por InsureIQ: $$port"; \
+			else \
+				echo "Puerto ocupado: $$port"; conflicts=1; \
+			fi; \
 		else \
 			echo "Puerto disponible: $$port"; \
 		fi; \
@@ -55,6 +70,9 @@ data-fetch:
 
 data-generate:
 	$(COMPOSE) run --rm python python -m insureiq.cli generate --profile $(PROFILE)
+
+public-data:
+	$(COMPOSE) run --rm python python -m insureiq.cli public-data
 
 etl:
 	$(COMPOSE) run --rm python python -m insureiq.cli etl
