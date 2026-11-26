@@ -10,10 +10,10 @@
     {"name": "crashes", "type": "whole number"}
   ],
   "measures": [
-    {"name": "Total Accidentes", "expression": "SUM(public_iowa_crashes_summary[crashes])"},
+    {"name": "Total Accidentes", "expression": "CALCULATE(SUM(public_iowa_crashes_summary[crashes]), public_iowa_crashes_summary[dimension] = \"severity\")"},
     {"name": "Categorías", "expression": "DISTINCTCOUNT(public_iowa_crashes_summary[category])"},
     {"name": "Accidentes por Condado", "expression": "CALCULATE([Total Accidentes], public_iowa_crashes_summary[dimension] = \"county\")"},
-    {"name": "Accidentes por Severidad", "expression": "CALCULATE([Total Accidentes], public_iowa_crashes_summary[dimension] = \"severity\")"}
+    {"name": "Accidentes por Severidad", "expression": "[Total Accidentes]"}
   ],
   "pages": [
     {"name": "Resumen", "visuals": ["Total Accidentes", "Accidentes por Severidad", "Accidentes por Condado"]},
