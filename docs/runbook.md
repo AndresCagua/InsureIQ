@@ -24,7 +24,7 @@ Estas credenciales son únicamente valores locales de desarrollo definidos por C
 
 ## Smoke reproducible
 
-Ejecutá los comandos en este orden:
+Ejecute los comandos en este orden:
 
 ```bash
 make data-generate PROFILE=smoke

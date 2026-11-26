@@ -6,13 +6,13 @@ Este directorio contiene el paquete reproducible de fuente, modelo, medidas y la
 
 ## Carga rápida en Power BI Web
 
-1. Ejecutá `make public-data`.
-2. En Power BI Web elegí **Nuevo → Cargar un archivo**.
-3. Cargá `data/processed/public_iowa_crashes_summary.csv`.
-4. Renombrá la tabla a `public_iowa_crashes_summary`.
-5. Copiá las medidas desde `InsureIQ_PublicCrashes_Measures.dax`.
-6. Creá las páginas según `InsureIQ_PublicCrashes_Model.json`.
-7. Cargá `data/processed/public_iowa_crashes_metadata.json` sólo como referencia de procedencia.
+1. Ejecute `make public-data`.
+2. En Power BI Web elija **Nuevo → Cargar un archivo**.
+3. Cargue `data/processed/public_iowa_crashes_summary.csv`.
+4. Renombre la tabla a `public_iowa_crashes_summary`.
+5. Copie las medidas desde `InsureIQ_PublicCrashes_Measures.dax`.
+6. Cree las páginas según `InsureIQ_PublicCrashes_Model.json`.
+7. Cargue `data/processed/public_iowa_crashes_metadata.json` sólo como referencia de procedencia.
 
 ## Modelo
 
@@ -20,13 +20,13 @@ La tabla tiene cuatro campos: `dimension`, `category`, `period` y `crashes`. El 
 
 ## Métricas ML
 
-Después de ejecutar `make fraud-train` y `make bi-data`, cargá también:
+Después de ejecutar `make fraud-train` y `make bi-data`, cargue también:
 
 ```text
 dashboards/exports/ml_fraud_metrics.csv
 ```
 
-Usá las medidas de `InsureIQ_ML_Measures.dax` para mostrar ROC-AUC, average precision, filas de prueba, modelo activo, casos para revisión manual y tasa de revisión. Cargá también `dashboards/exports/fraud_review_queue.csv` para una tabla filtrable de casos. Etiquetá la página como **Benchmark ML público — no producción**.
+Utilice las medidas de `InsureIQ_ML_Measures.dax` para mostrar ROC-AUC, average precision, filas de prueba, modelo activo, casos para revisión manual y tasa de revisión. Cargue también `dashboards/exports/fraud_review_queue.csv` para una tabla filtrable de casos. Etiquete la página como **Benchmark ML público — no producción**.
 
 ## Publicación
 

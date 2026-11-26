@@ -37,4 +37,4 @@ Después de descargar:
 docker compose --profile demo up -d api streamlit
 ```
 
-Abrí `http://127.0.0.1:58501` y elegí **Accidentes públicos de Iowa** en el selector de fuente.
+Abra `http://127.0.0.1:58501` y elija **Accidentes públicos de Iowa** en el selector de fuente.

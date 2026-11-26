@@ -14,7 +14,7 @@ if source == "Accidentes públicos de Iowa":
     summary_path = Path("data/processed/public_iowa_crashes_summary.csv")
     metadata_path = Path("data/processed/public_iowa_crashes_metadata.json")
     if not summary_path.exists():
-        st.warning("Ejecutá `make public-data` para descargar la fuente pública aprobada.")
+        st.warning("Ejecute `make public-data` para descargar la fuente pública aprobada.")
     else:
         summary = pd.read_csv(summary_path)
         st.subheader("Accidentes públicos de Iowa")
@@ -50,6 +50,6 @@ if fraud_metrics_path.exists():
         "ecuatoriana ni producción."
     )
 else:
-    st.warning("Ejecutá `make fraud-train` y `make bi-data` para exportar las métricas ML.")
+    st.warning("Ejecute `make fraud-train` y `make bi-data` para exportar las métricas ML.")
 st.text_input("ID de siniestro", placeholder="DEMO-001")
 st.button("Consultar modelo", disabled=True)
