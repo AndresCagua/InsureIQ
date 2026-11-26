@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook original-version="18.1" source-build="InsureIQ" version="18.1" xml:base="http://tableau.com/xml/workbook">
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder.true...user-set>false</AccessibleZoneTabOrder.true...user-set>
+  </document-format-change-manifest>
+  <preferences>
+    <preference name="ui.encoding.shelf.height" value="24" />
+  </preferences>
+  <datasources>
+    <datasource caption="Iowa public crashes" inline="true" name="federated.0" version="18.1">
+      <connection class="textscan" directory="../../data/processed" filename="public_iowa_crashes_summary.csv" header="yes" sep="," />
+      <metadata-records>
+        <metadata-record class="column"><remote-name>dimension</remote-name><local-name>dimension</local-name><parent-name>[Iowa public crashes]</parent-name><remote-type>WSTR</remote-type><ordinal>0</ordinal><family>public_iowa_crashes_summary</family></metadata-record>
+        <metadata-record class="column"><remote-name>category</remote-name><local-name>category</local-name><parent-name>[Iowa public crashes]</parent-name><remote-type>WSTR</remote-type><ordinal>1</ordinal><family>public_iowa_crashes_summary</family></metadata-record>
+        <metadata-record class="column"><remote-name>period</remote-name><local-name>period</local-name><parent-name>[Iowa public crashes]</parent-name><remote-type>WSTR</remote-type><ordinal>2</ordinal><family>public_iowa_crashes_summary</family></metadata-record>
+        <metadata-record class="column"><remote-name>crashes</remote-name><local-name>crashes</local-name><parent-name>[Iowa public crashes]</parent-name><remote-type>INTEGER</remote-type><ordinal>3</ordinal><family>public_iowa_crashes_summary</family></metadata-record>
+      </metadata-records>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="Resumen"><table><view><datasources><datasource caption="Iowa public crashes" /></datasources><datasource-dependencies datasource="federated.0"><column datatype="string" name="[dimension]" /><column datatype="integer" name="[crashes]" /></datasource-dependencies></view></table></worksheet>
+    <worksheet name="Severidad"><table><view><datasources><datasource caption="Iowa public crashes" /></datasources><datasource-dependencies datasource="federated.0"><column datatype="string" name="[category]" /><column datatype="integer" name="[crashes]" /></datasource-dependencies></view></table></worksheet>
+    <worksheet name="Condado"><table><view><datasources><datasource caption="Iowa public crashes" /></datasources><datasource-dependencies datasource="federated.0"><column datatype="string" name="[category]" /><column datatype="integer" name="[crashes]" /></datasource-dependencies></view></table></worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder="true" name="InsureIQ Public Crashes"><layout-options><title><formatted-text><run fontcolor="#1F2937" fontsize="14">Accidentes públicos de Iowa</run></formatted-text></title></layout-options><zones><zone h="40000" id="1" name="Resumen" show-title="true" w="60000" x="0" y="0" /></zones></dashboard>
+  </dashboards>
+</workbook>

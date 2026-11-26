@@ -1,0 +1,23 @@
+{
+  "name": "InsureIQ Public Crashes",
+  "source": "../data/processed/public_iowa_crashes_summary.csv",
+  "license": "CC BY 4.0",
+  "table": "public_iowa_crashes_summary",
+  "columns": [
+    {"name": "dimension", "type": "text"},
+    {"name": "category", "type": "text"},
+    {"name": "period", "type": "text"},
+    {"name": "crashes", "type": "whole number"}
+  ],
+  "measures": [
+    {"name": "Total Accidentes", "expression": "SUM(public_iowa_crashes_summary[crashes])"},
+    {"name": "Categorías", "expression": "DISTINCTCOUNT(public_iowa_crashes_summary[category])"},
+    {"name": "Accidentes por Condado", "expression": "CALCULATE([Total Accidentes], public_iowa_crashes_summary[dimension] = \"county\")"},
+    {"name": "Accidentes por Severidad", "expression": "CALCULATE([Total Accidentes], public_iowa_crashes_summary[dimension] = \"severity\")"}
+  ],
+  "pages": [
+    {"name": "Resumen", "visuals": ["Total Accidentes", "Accidentes por Severidad", "Accidentes por Condado"]},
+    {"name": "Tendencia", "visuals": ["period", "crashes", "category"]},
+    {"name": "Metodología", "visuals": ["source", "license", "limitation"]}
+  ]
+}

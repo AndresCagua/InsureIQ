@@ -128,6 +128,15 @@ Incorporar una fuente gubernamental pública y gratuita, separada de los datos s
 
 Salida: fuente pública descargable, extract reproducible, dashboard local con selector de fuente y documentación de carga para Power BI/Tableau.
 
+### S15 — Artefactos nativos de Power BI y Tableau
+Relacionado con la autorización posterior del propietario para preparar publicación web.
+
+> "papito hermoso y lindo los dashboards mas importantes y reales son los de Power Bi y tableau eso lo necesito pero para ayer"
+
+Crear artefactos reproducibles para Power BI y Tableau usando los extracts públicos preparados, con modelo, medidas, páginas/hojas y documentación de carga. No afirmar publicación ni inventar una cuenta; la publicación web requiere una sesión autenticada y autorización explícita en la plataforma.
+
+Salida: paquete Power BI documentado, workbook Tableau verificable, checklist de publicación y evidencia separada de lo que fue creado localmente frente a lo publicado.
+
 ## Tasks
 
 - T1 (S1): congelar alcance, idioma y convención de commits — ruta: documentación — commit: no aplica (slice documental completado).
@@ -143,7 +152,8 @@ Salida: fuente pública descargable, extract reproducible, dashboard local con s
 - T11 (S11): implementar API, Streamlit y MLOps — ruta: `src/api/`, `dashboards/streamlit/`, `infrastructure/`, `tests/` — commit: 20261126 implementar API y demo Streamlit.
 - T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: 20261126 preparar exports BI y capacidades.
 - T13 (S13): cerrar CI, seguridad, rendimiento y entrega — ruta: `.github/`, `docs/`, `reports/`, `README.md`, `tests/` — commit: 20261126 cerrar CI seguridad rendimiento y entrega.
-- T14 (S14): incorporar fuente pública real y dashboards conectados — ruta: `data/`, `src/`, `dashboards/`, `docs/`, `tests/` — commit: pendiente.
+- T14 (S14): incorporar fuente pública real y dashboards conectados — ruta: `data/`, `src/`, `dashboards/`, `docs/`, `tests/` — commit: 20261126 incorporar datos publicos y dashboards.
+- T15 (S15): crear artefactos Power BI/Tableau y checklist de publicación — ruta: `dashboards/powerbi/`, `dashboards/tableau/`, `docs/` — commit: pendiente.
 
 ## Log
 
