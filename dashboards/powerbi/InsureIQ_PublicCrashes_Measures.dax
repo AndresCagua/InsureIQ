@@ -8,7 +8,7 @@ Categorías = DISTINCTCOUNT(public_iowa_crashes_summary[category])
 
 Accidentes por Condado =
 CALCULATE(
-    [Total Accidentes],
+    SUM(public_iowa_crashes_summary[crashes]),
     public_iowa_crashes_summary[dimension] = "county"
 )
 
@@ -16,6 +16,6 @@ Accidentes por Severidad = [Total Accidentes]
 
 Accidentes por Mes =
 CALCULATE(
-    [Total Accidentes],
+    SUM(public_iowa_crashes_summary[crashes]),
     public_iowa_crashes_summary[dimension] = "month_severity"
 )
