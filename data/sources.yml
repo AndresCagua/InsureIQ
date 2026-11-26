@@ -1,0 +1,73 @@
+# Registro de procedencia. No marcar verified=true sin evidencia de la ejecución.
+sources:
+  - source_dataset: openml_freMTPL2freq
+    purpose: exposición y frecuencia de siniestros
+    discovery_url: https://www.openml.org/
+    resolved_url: null
+    dataset_version: null
+    license: null
+    attribution: null
+    retrieval_date: null
+    sha256: null
+    schema: null
+    row_count: null
+    geography: Francia
+    currency: EUR
+    target_definition: frecuencia de siniestros
+    redistribution_policy: pendiente de verificación
+    verified: false
+    status: pending_verification
+
+  - source_dataset: openml_freMTPL2sev
+    purpose: severidad de siniestros positivos
+    discovery_url: https://www.openml.org/
+    resolved_url: null
+    dataset_version: null
+    license: null
+    attribution: null
+    retrieval_date: null
+    sha256: null
+    schema: null
+    row_count: null
+    geography: Francia
+    currency: EUR
+    target_definition: monto positivo del siniestro
+    redistribution_policy: pendiente de verificación
+    verified: false
+    status: pending_verification
+
+  - source_dataset: public_vehicle_fraud_benchmark
+    purpose: benchmark supervisado de fraude
+    discovery_url: https://www.kaggle.com/datasets
+    resolved_url: null
+    dataset_version: null
+    license: null
+    attribution: null
+    retrieval_date: null
+    sha256: null
+    schema: null
+    row_count: null
+    geography: null
+    currency: null
+    target_definition: fraude confirmado según la fuente original
+    redistribution_policy: pendiente de verificación; puede requerir descarga manual
+    verified: false
+    status: pending_verification
+
+  - source_dataset: synthetic_ecuador_insurer
+    purpose: almacén, BI, escenarios, pronóstico y demo
+    discovery_url: null
+    resolved_url: null
+    dataset_version: generator-0.1.0
+    license: MIT para el generador; datos sintéticos
+    attribution: InsureIQ contributors
+    retrieval_date: null
+    sha256: null
+    schema: definido por el generador
+    row_count: depende del perfil smoke/full
+    geography: Ecuador ficticio
+    currency: USD
+    target_definition: etiquetas generadas documentadas por el proyecto
+    redistribution_policy: redistribuible como dato sintético
+    verified: false
+    status: generator_pending
