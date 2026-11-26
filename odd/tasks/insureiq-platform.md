@@ -123,7 +123,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 
 - T1 (S1): congelar alcance, idioma y convención de commits — ruta: documentación — commit: no aplica (slice documental completado).
 - T2 (S2): crear base reproducible, configuración y comandos Make — ruta: estructura/configuración — commit: pendiente.
-- T3 (S3): crear Compose por perfiles, healthchecks y `make doctor` con detección de puertos — ruta: `compose.yml`, infraestructura y documentación — commit: pendiente.
+- T3 (S3): crear Compose por perfiles, healthchecks y `make doctor` con detección de puertos — ruta: `compose.yml`, infraestructura y documentación — commit: 20261126 implementar Compose y puertos.
 - T4 (S4): validar capacidades, fuentes y procedencia — ruta: `data/`, `docs/` — commit: pendiente.
 - T5 (S5): implementar generador y contratos de datos — ruta: `src/`, `configs/`, `database/`, `tests/` — commit: pendiente.
 - T6 (S6): implementar ETL, dbt, warehouse y DAGs — ruta: `src/`, `dbt/`, `airflow/`, `database/`, `tests/` — commit: pendiente.
@@ -145,3 +145,5 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L6: Decisión corregida: todo el código Python, notebooks y comandos Python deben ejecutarse dentro de contenedores para fijar la versión y dependencias del proyecto. Los servicios persistentes y de infraestructura también deben estar contenerizados; el host sólo orquesta Docker, edita archivos y ejecuta comandos de entrada como `docker compose`/`make` que delegan al contenedor. Compose es el runtime local canónico y los perfiles controlan el consumo de recursos.
 - L7: "no todo lo de python que se corra desde contenedores, xq se debe usar la version de python adecuada para el proyecto y no podemos confiar en la version de pyhton del cliente que haga un fork del proyecto"
 - L8: S1 verificado: `SPEC.md` y este plan fijan el alcance del proyecto, la separación entre código fuente en inglés y documentación/UI/commits en español, la convención de commits `yyyymmdd descripción`, la ejecución de Python dentro de contenedores y la prohibición de inventar evidencia. No se creó código porque S1 es un slice de alcance y reglas.
+- L9: S2 verificado y confirmado en el commit `b1caccc`: imagen Python 3.12 construida, `uv.lock` generado, Compose válido, diagnóstico, pytest y Ruff exitosos. `.env.example` fue creado manualmente por el propietario.
+- L10: S3 verificado: Compose core levantó PostgreSQL y MinIO con healthchecks healthy en 55432, 59000 y 59001; `make doctor` validó los puertos libres antes del arranque. La imagen de MinIO se fijó a una etiqueta existente después de que la etiqueta inicial no estuviera disponible.

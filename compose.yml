@@ -10,7 +10,55 @@ services:
     env_file:
       - path: .env
         required: false
+    environment:
+      TZ: ${TZ:-America/Guayaquil}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      MINIO_ENDPOINT: minio:9000
     volumes:
       - .:/workspace
     profiles: [core, orchestration, mlops, demo]
     command: ["python", "-m", "insureiq.cli", "doctor"]
+
+  postgres:
+    image: postgres:16-alpine
+    profiles: [core, orchestration, mlops, demo]
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-insureiq}
+      POSTGRES_USER: ${POSTGRES_USER:-insureiq}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-only-change-me}
+      TZ: ${TZ:-America/Guayaquil}
+    ports:
+      - "127.0.0.1:${POSTGRES_HOST_PORT:-55432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  minio:
+    image: minio/minio:RELEASE.2024-06-13T22-53-53Z
+    profiles: [core, orchestration, mlops, demo]
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-insureiq}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-local-only-change-me}
+      TZ: ${TZ:-America/Guayaquil}
+    command: ["server", "/data", "--console-address", ":9001"]
+    ports:
+      - "127.0.0.1:${MINIO_API_HOST_PORT:-59000}:9000"
+      - "127.0.0.1:${MINIO_CONSOLE_HOST_PORT:-59001}:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  postgres_data:
+  minio_data:
