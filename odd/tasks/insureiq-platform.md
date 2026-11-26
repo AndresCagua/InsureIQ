@@ -125,7 +125,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - T2 (S2): crear base reproducible, configuración y comandos Make — ruta: estructura/configuración — commit: pendiente.
 - T3 (S3): crear Compose por perfiles, healthchecks y `make doctor` con detección de puertos — ruta: `compose.yml`, infraestructura y documentación — commit: 20261126 implementar Compose y puertos.
 - T4 (S4): validar capacidades, fuentes y procedencia — ruta: `data/`, `docs/` — commit: 20261126 registrar contrato de procedencia.
-- T5 (S5): implementar generador y contratos de datos — ruta: `src/`, `configs/`, `database/`, `tests/` — commit: pendiente.
+- T5 (S5): implementar generador y contratos de datos — ruta: `src/`, `configs/`, `database/`, `tests/` — commit: 20261126 implementar generador sintético y contratos.
 - T6 (S6): implementar ETL, dbt, warehouse y DAGs — ruta: `src/`, `dbt/`, `airflow/`, `database/`, `tests/` — commit: pendiente.
 - T7 (S7): implementar estadística y notebooks reproducibles — ruta: `src/statistics/`, `notebooks/`, `reports/`, `tests/` — commit: pendiente.
 - T8 (S8): implementar fraude y tarjeta de modelo — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: pendiente.
@@ -148,3 +148,4 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L9: S2 verificado y confirmado en el commit `b1caccc`: imagen Python 3.12 construida, `uv.lock` generado, Compose válido, diagnóstico, pytest y Ruff exitosos. `.env.example` fue creado manualmente por el propietario.
 - L10: S3 verificado: Compose core levantó PostgreSQL y MinIO con healthchecks healthy en 55432, 59000 y 59001; `make doctor` validó los puertos libres antes del arranque. La imagen de MinIO se fijó a una etiqueta existente después de que la etiqueta inicial no estuviera disponible.
 - L11: S4 parcial verificado: `data/sources.yml` define el contrato de procedencia sin inventar licencias, versiones, hashes ni cantidades; `data/README.md` documenta la descarga manual y la exclusión de raw; `make data-fetch` falla explícitamente con código 2 mientras no haya fuentes verificadas.
+- L12: S5 verificado: el generador smoke determinista produjo 1.000 clientes, 1.200 vehículos, 2.500 pólizas y 500 siniestros dentro del contenedor; `data/contracts.yml` cargó correctamente; pytest y Ruff pasaron. Las anomalías raw quedan marcadas para cuarentena posterior.

@@ -1,0 +1,33 @@
+version: "0.1"
+unknown_dimension_key: -1
+entities:
+  customers:
+    grain: one row per customer
+    key: customer_id
+    required: [customer_id, age, province, is_synthetic]
+    checks:
+      - age >= 18
+      - age <= 100
+  vehicles:
+    grain: one row per vehicle
+    key: vehicle_id
+    required: [vehicle_id, make, model_year, vehicle_value_usd, is_synthetic]
+    checks:
+      - vehicle_value_usd > 0
+  policies:
+    grain: one row per policy
+    key: policy_id
+    required: [policy_id, customer_id, vehicle_id, product, annual_premium_usd, is_synthetic]
+    foreign_keys:
+      customer_id: customers.customer_id
+      vehicle_id: vehicles.vehicle_id
+    checks:
+      - annual_premium_usd > 0
+  claims:
+    grain: one row per claim
+    key: claim_id
+    required: [claim_id, policy_id, loss_date, claimed_amount_usd, is_synthetic]
+    foreign_keys:
+      policy_id: policies.policy_id
+    checks:
+      - claimed_amount_usd >= 0

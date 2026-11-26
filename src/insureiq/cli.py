@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import argparse
 import os
 import sys
+
+from insureiq.synthetic import main as generate_main
 
 
 def doctor() -> None:
@@ -21,4 +24,11 @@ def doctor() -> None:
 
 
 if __name__ == "__main__":
-    doctor()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("command", nargs="?", default="doctor", choices=("doctor", "generate"))
+    args, remaining = parser.parse_known_args()
+    if args.command == "generate":
+        sys.argv = [sys.argv[0], *remaining]
+        generate_main()
+    else:
+        doctor()

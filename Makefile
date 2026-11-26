@@ -4,11 +4,12 @@ SHELL := /bin/bash
 IMAGE ?= insureiq-dev:local
 COMPOSE ?= docker compose
 PORTS_TO_CHECK ?= 55432 59000 59001 58080 55000 58000 58501 58888
+PROFILE ?= smoke
 
-.PHONY: help bootstrap doctor build test lint data-fetch up down clean
+.PHONY: help bootstrap doctor build test lint data-fetch data-generate up down clean
 
 help:
-	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch up down clean'
+	@printf '%s\n' 'Targets: bootstrap doctor build test lint data-fetch data-generate up down clean'
 
 bootstrap:
 	$(COMPOSE) build python
@@ -42,6 +43,9 @@ data-fetch:
 	@echo 'No hay fuentes públicas verificadas para descargar todavía.' >&2
 	@echo 'Completa data/sources.yml después de verificar licencia, versión y URL resuelta.' >&2
 	@exit 2
+
+data-generate:
+	$(COMPOSE) run --rm python python -m insureiq.cli generate --profile $(PROFILE)
 
 up:
 	$(MAKE) doctor
