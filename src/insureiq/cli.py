@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from insureiq.etl import run_etl
+from insureiq.forecast import forecast_from_path
 from insureiq.fraud import train_from_path
 from insureiq.risk import train_from_paths
 from insureiq.statistics import claims_summary, quality_report
@@ -34,7 +35,7 @@ if __name__ == "__main__":
         "command",
         nargs="?",
         default="doctor",
-        choices=("doctor", "generate", "etl", "stats", "fraud", "risk"),
+        choices=("doctor", "generate", "etl", "stats", "fraud", "risk", "forecast"),
     )
     parser.add_argument("--raw-dir", default="data/synthetic")
     parser.add_argument("--processed-dir", default="data/processed")
@@ -63,5 +64,8 @@ if __name__ == "__main__":
             Path(args.policy_path), Path(args.claim_path), Path(args.report)
         )
         print(f"Baselines de riesgo entrenados: {metrics}")
+    elif args.command == "forecast":
+        metrics = forecast_from_path(Path(args.claim_path), Path(args.report))
+        print(f"Backtest de pronóstico completado: {metrics}")
     else:
         doctor()
