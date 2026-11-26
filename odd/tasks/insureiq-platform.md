@@ -131,7 +131,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - T8 (S8): implementar fraude y tarjeta de modelo — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: 20261126 implementar baseline de fraude.
 - T9 (S9): implementar riesgo, severidad y prima pura — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: 20261126 implementar riesgo severidad y prima pura.
 - T10 (S10): implementar pronósticos y backtests — ruta: `src/models/`, `notebooks/`, `reports/`, `tests/` — commit: 20261126 implementar pronóstico y backtesting.
-- T11 (S11): implementar API, Streamlit y MLOps — ruta: `src/api/`, `dashboards/streamlit/`, `infrastructure/`, `tests/` — commit: pendiente.
+- T11 (S11): implementar API, Streamlit y MLOps — ruta: `src/api/`, `dashboards/streamlit/`, `infrastructure/`, `tests/` — commit: 20261126 implementar API y demo Streamlit.
 - T12 (S12): preparar BI y validar capacidades reales — ruta: `dashboards/`, `docs/`, `tests/` — commit: pendiente.
 - T13 (S13): cerrar CI, seguridad, rendimiento y entrega — ruta: `.github/`, `docs/`, `reports/`, `README.md`, `tests/` — commit: pendiente.
 
@@ -154,3 +154,4 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L15: S8 verificado: se implementó un baseline logístico con preprocesamiento dentro del pipeline, split estratificado y métricas ROC-AUC/average precision; pytest pasó 2 pruebas y Ruff pasó. `make fraud-train` falla claramente con código 2 cuando no existe el benchmark verificado, sin inventar datos ni métricas.
 - L16: S9 verificado: se implementaron baselines Poisson de frecuencia y Gamma de severidad a granularidad de póliza, con exposición explícita y prima pura; el smoke produjo 2.500 años de exposición y pérdida anual predicha de 1.243.481,57 USD sintéticos. pytest pasó 3 pruebas y Ruff pasó; se documentó que no es validación actuarial ecuatoriana.
 - L17: S10 verificado: se implementó serie mensual de siniestros, baseline naive estacional de 12 meses y backtesting rolling-origin de 48 puntos; MAE 3,4375, RMSE 4,0850 y cobertura ilustrativa 0,9792. pytest pasó 3 pruebas y Ruff pasó; los intervalos se etiquetan como no calibrados.
+- L18: S11 parcial verificado: FastAPI versionada, health/ready/models/fraud/forecasts/metrics, correlation ID, demo Streamlit y perfiles Compose `demo` quedaron creados; pytest pasó 4 pruebas, Ruff pasó, `/health` devolvió `{"status":"ok"}` y API/Streamlit iniciaron en 58000/58501. La inferencia queda 503 hasta registrar un benchmark/modelo verificado; MLflow registry completo queda pendiente.

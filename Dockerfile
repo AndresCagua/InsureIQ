@@ -10,7 +10,7 @@ COPY pyproject.toml README.md ./
 COPY src ./src
 
 RUN python -m pip install --no-cache-dir --upgrade pip \
-    && python -m pip install --no-cache-dir ".[quality,api,ml]"
+    && python -m pip install --no-cache-dir ".[quality,api,ml,demo]"
 
 COPY tests ./tests
 COPY configs ./configs

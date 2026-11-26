@@ -21,6 +21,49 @@ services:
     profiles: [core, orchestration, mlops, demo]
     command: ["python", "-m", "insureiq.cli", "doctor"]
 
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: insureiq-dev:local
+    working_dir: /workspace
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PYTHONPATH: /workspace/src
+      TZ: ${TZ:-America/Guayaquil}
+    volumes:
+      - .:/workspace
+    profiles: [demo]
+    command: ["uvicorn", "insureiq.api:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "127.0.0.1:${API_HOST_PORT:-58000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: insureiq-dev:local
+    working_dir: /workspace
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PYTHONPATH: /workspace/src
+      TZ: ${TZ:-America/Guayaquil}
+    volumes:
+      - .:/workspace
+    profiles: [demo]
+    command: ["streamlit", "run", "dashboards/streamlit/app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports:
+      - "127.0.0.1:${STREAMLIT_HOST_PORT:-58501}:8501"
+
   postgres:
     image: postgres:16-alpine
     profiles: [core, orchestration, mlops, demo]
