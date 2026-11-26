@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from insureiq.etl import run_etl
+from insureiq.fraud import train_from_path
 from insureiq.statistics import claims_summary, quality_report
 from insureiq.synthetic import main as generate_main
 
@@ -29,11 +30,17 @@ def doctor() -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "command", nargs="?", default="doctor", choices=("doctor", "generate", "etl", "stats")
+        "command",
+        nargs="?",
+        default="doctor",
+        choices=("doctor", "generate", "etl", "stats", "fraud"),
     )
     parser.add_argument("--raw-dir", default="data/synthetic")
     parser.add_argument("--processed-dir", default="data/processed")
     parser.add_argument("--report", default="reports/data_quality.json")
+    parser.add_argument(
+        "--benchmark", default="data/raw/public_vehicle_fraud_benchmark/benchmark.csv"
+    )
     args, remaining = parser.parse_known_args()
     if args.command == "generate":
         sys.argv = [sys.argv[0], *remaining]
@@ -45,5 +52,8 @@ if __name__ == "__main__":
         report = quality_report(Path(args.processed_dir), Path(args.report))
         claims = claims_summary(Path(args.processed_dir) / "fact_claim.csv")
         print(f"Informe estadístico generado: {len(report['tables'])} tablas; resumen: {claims}")
+    elif args.command == "fraud":
+        metrics = train_from_path(Path(args.benchmark), Path(args.report), target="fraud")
+        print(f"Baseline de fraude entrenado: {metrics}")
     else:
         doctor()
