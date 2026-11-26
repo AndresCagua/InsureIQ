@@ -127,7 +127,7 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - T4 (S4): validar capacidades, fuentes y procedencia — ruta: `data/`, `docs/` — commit: 20261126 registrar contrato de procedencia.
 - T5 (S5): implementar generador y contratos de datos — ruta: `src/`, `configs/`, `database/`, `tests/` — commit: 20261126 implementar generador sintético y contratos.
 - T6 (S6): implementar ETL, dbt, warehouse y DAGs — ruta: `src/`, `dbt/`, `airflow/`, `database/`, `tests/` — commit: 20261126 implementar ETL y almacén dimensional.
-- T7 (S7): implementar estadística y notebooks reproducibles — ruta: `src/statistics/`, `notebooks/`, `reports/`, `tests/` — commit: pendiente.
+- T7 (S7): implementar estadística y notebooks reproducibles — ruta: `src/statistics/`, `notebooks/`, `reports/`, `tests/` — commit: 20261126 implementar estadística y notebook de calidad.
 - T8 (S8): implementar fraude y tarjeta de modelo — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: pendiente.
 - T9 (S9): implementar riesgo, severidad y prima pura — ruta: `src/models/`, `src/evaluation/`, `reports/model_cards/`, `tests/` — commit: pendiente.
 - T10 (S10): implementar pronósticos y backtests — ruta: `src/models/`, `notebooks/`, `reports/`, `tests/` — commit: pendiente.
@@ -150,3 +150,4 @@ Salida: definición de terminado comprobada y lista de desviaciones, comandos, a
 - L11: S4 parcial verificado: `data/sources.yml` define el contrato de procedencia sin inventar licencias, versiones, hashes ni cantidades; `data/README.md` documenta la descarga manual y la exclusión de raw; `make data-fetch` falla explícitamente con código 2 mientras no haya fuentes verificadas.
 - L12: S5 verificado: el generador smoke determinista produjo 1.000 clientes, 1.200 vehículos, 2.500 pólizas y 500 siniestros dentro del contenedor; `data/contracts.yml` cargó correctamente; pytest y Ruff pasaron. Las anomalías raw quedan marcadas para cuarentena posterior.
 - L13: S6 verificado: `make etl` transformó el perfil smoke en 1.000 `dim_customer`, 1.200 `dim_vehicle`, 2.500 `dim_policy` y 500 `fact_claim`; produjo `etl_manifest.json`, cuarentena y tablas procesadas. El esquema dimensional SQL, proyecto dbt y DAG declarativo quedaron creados; pytest y Ruff pasaron.
+- L14: S7 verificado: se generó el informe `reports/data_quality.json` con 5 tablas y resumen descriptivo de 500 siniestros; el notebook `notebooks/01_data_quality.ipynb` es JSON válido; pytest y Ruff pasaron dentro del contenedor.
