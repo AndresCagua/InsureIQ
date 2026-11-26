@@ -4,7 +4,11 @@
     "dim_policy.csv": 2500,
     "dim_vehicle.csv": 1200,
     "fact_claim.csv": 500,
-    "quarantine_claims.csv": 0
+    "public_iowa_crashes_sample.csv": 50000,
+    "public_iowa_crashes_summary.csv": 822,
+    "public_vehicle_fraud_benchmark.csv": 10000,
+    "quarantine_claims.csv": 0,
+    "ml_fraud_metrics.csv": 3
   },
   "fixture": "golden_kpis.json"
 }

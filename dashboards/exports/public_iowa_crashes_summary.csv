@@ -1,0 +1,823 @@
+dimension,category,period,crashes
+month_severity,Fatal,2015-01,17
+month_severity,Major Injury,2015-01,76
+month_severity,Minor Injury,2015-01,334
+month_severity,Possible/Unknown,2015-01,836
+month_severity,Property Damage Only,2015-01,4005
+month_severity,Fatal,2015-02,16
+month_severity,Major Injury,2015-02,58
+month_severity,Minor Injury,2015-02,282
+month_severity,Possible/Unknown,2015-02,695
+month_severity,Property Damage Only,2015-02,3374
+month_severity,Fatal,2015-03,19
+month_severity,Major Injury,2015-03,84
+month_severity,Minor Injury,2015-03,308
+month_severity,Possible/Unknown,2015-03,651
+month_severity,Property Damage Only,2015-03,2617
+month_severity,Fatal,2015-04,25
+month_severity,Major Injury,2015-04,86
+month_severity,Minor Injury,2015-04,355
+month_severity,Possible/Unknown,2015-04,682
+month_severity,Property Damage Only,2015-04,2532
+month_severity,Fatal,2015-05,23
+month_severity,Major Injury,2015-05,114
+month_severity,Minor Injury,2015-05,434
+month_severity,Possible/Unknown,2015-05,779
+month_severity,Property Damage Only,2015-05,2977
+month_severity,Fatal,2015-06,23
+month_severity,Major Injury,2015-06,114
+month_severity,Minor Injury,2015-06,440
+month_severity,Possible/Unknown,2015-06,708
+month_severity,Property Damage Only,2015-06,3051
+month_severity,Fatal,2015-07,30
+month_severity,Major Injury,2015-07,137
+month_severity,Minor Injury,2015-07,515
+month_severity,Possible/Unknown,2015-07,722
+month_severity,Property Damage Only,2015-07,2899
+month_severity,Fatal,2015-08,41
+month_severity,Major Injury,2015-08,130
+month_severity,Minor Injury,2015-08,485
+month_severity,Possible/Unknown,2015-08,732
+month_severity,Property Damage Only,2015-08,2671
+month_severity,Fatal,2015-09,25
+month_severity,Major Injury,2015-09,131
+month_severity,Minor Injury,2015-09,498
+month_severity,Possible/Unknown,2015-09,831
+month_severity,Property Damage Only,2015-09,2917
+month_severity,Fatal,2015-10,23
+month_severity,Major Injury,2015-10,129
+month_severity,Minor Injury,2015-10,427
+month_severity,Possible/Unknown,2015-10,878
+month_severity,Property Damage Only,2015-10,3702
+month_severity,Fatal,2015-11,19
+month_severity,Major Injury,2015-11,99
+month_severity,Minor Injury,2015-11,403
+month_severity,Possible/Unknown,2015-11,879
+month_severity,Property Damage Only,2015-11,4457
+month_severity,Fatal,2015-12,22
+month_severity,Major Injury,2015-12,71
+month_severity,Minor Injury,2015-12,356
+month_severity,Possible/Unknown,2015-12,832
+month_severity,Property Damage Only,2015-12,4071
+month_severity,Fatal,2016-01,24
+month_severity,Major Injury,2016-01,80
+month_severity,Minor Injury,2016-01,353
+month_severity,Possible/Unknown,2016-01,812
+month_severity,Property Damage Only,2016-01,3745
+month_severity,Fatal,2016-02,16
+month_severity,Major Injury,2016-02,59
+month_severity,Minor Injury,2016-02,345
+month_severity,Possible/Unknown,2016-02,763
+month_severity,Property Damage Only,2016-02,3362
+month_severity,Fatal,2016-03,22
+month_severity,Major Injury,2016-03,76
+month_severity,Minor Injury,2016-03,319
+month_severity,Possible/Unknown,2016-03,667
+month_severity,Property Damage Only,2016-03,2654
+month_severity,Fatal,2016-04,31
+month_severity,Major Injury,2016-04,104
+month_severity,Minor Injury,2016-04,411
+month_severity,Possible/Unknown,2016-04,710
+month_severity,Property Damage Only,2016-04,2672
+month_severity,Fatal,2016-05,35
+month_severity,Major Injury,2016-05,130
+month_severity,Minor Injury,2016-05,462
+month_severity,Possible/Unknown,2016-05,855
+month_severity,Property Damage Only,2016-05,3075
+month_severity,Fatal,2016-06,36
+month_severity,Major Injury,2016-06,130
+month_severity,Minor Injury,2016-06,535
+month_severity,Possible/Unknown,2016-06,752
+month_severity,Property Damage Only,2016-06,3144
+month_severity,Fatal,2016-07,30
+month_severity,Major Injury,2016-07,121
+month_severity,Minor Injury,2016-07,440
+month_severity,Possible/Unknown,2016-07,716
+month_severity,Property Damage Only,2016-07,2733
+month_severity,Fatal,2016-08,35
+month_severity,Major Injury,2016-08,108
+month_severity,Minor Injury,2016-08,436
+month_severity,Possible/Unknown,2016-08,770
+month_severity,Property Damage Only,2016-08,2800
+month_severity,Fatal,2016-09,30
+month_severity,Major Injury,2016-09,126
+month_severity,Minor Injury,2016-09,483
+month_severity,Possible/Unknown,2016-09,781
+month_severity,Property Damage Only,2016-09,3169
+month_severity,Fatal,2016-10,36
+month_severity,Major Injury,2016-10,129
+month_severity,Minor Injury,2016-10,469
+month_severity,Possible/Unknown,2016-10,819
+month_severity,Property Damage Only,2016-10,3736
+month_severity,Fatal,2016-11,32
+month_severity,Major Injury,2016-11,98
+month_severity,Minor Injury,2016-11,402
+month_severity,Possible/Unknown,2016-11,827
+month_severity,Property Damage Only,2016-11,4304
+month_severity,Fatal,2016-12,28
+month_severity,Major Injury,2016-12,78
+month_severity,Minor Injury,2016-12,393
+month_severity,Possible/Unknown,2016-12,926
+month_severity,Property Damage Only,2016-12,4635
+month_severity,Fatal,2017-01,19
+month_severity,Major Injury,2017-01,73
+month_severity,Minor Injury,2017-01,348
+month_severity,Possible/Unknown,2017-01,736
+month_severity,Property Damage Only,2017-01,3308
+month_severity,Fatal,2017-02,18
+month_severity,Major Injury,2017-02,79
+month_severity,Minor Injury,2017-02,302
+month_severity,Possible/Unknown,2017-02,671
+month_severity,Property Damage Only,2017-02,2924
+month_severity,Fatal,2017-03,21
+month_severity,Major Injury,2017-03,82
+month_severity,Minor Injury,2017-03,348
+month_severity,Possible/Unknown,2017-03,668
+month_severity,Property Damage Only,2017-03,2712
+month_severity,Fatal,2017-04,21
+month_severity,Major Injury,2017-04,96
+month_severity,Minor Injury,2017-04,377
+month_severity,Possible/Unknown,2017-04,728
+month_severity,Property Damage Only,2017-04,2716
+month_severity,Fatal,2017-05,20
+month_severity,Major Injury,2017-05,126
+month_severity,Minor Injury,2017-05,491
+month_severity,Possible/Unknown,2017-05,821
+month_severity,Property Damage Only,2017-05,3370
+month_severity,Fatal,2017-06,28
+month_severity,Major Injury,2017-06,129
+month_severity,Minor Injury,2017-06,505
+month_severity,Possible/Unknown,2017-06,830
+month_severity,Property Damage Only,2017-06,3246
+month_severity,Fatal,2017-07,32
+month_severity,Major Injury,2017-07,126
+month_severity,Minor Injury,2017-07,494
+month_severity,Possible/Unknown,2017-07,737
+month_severity,Property Damage Only,2017-07,2861
+month_severity,Fatal,2017-08,35
+month_severity,Major Injury,2017-08,122
+month_severity,Minor Injury,2017-08,492
+month_severity,Possible/Unknown,2017-08,839
+month_severity,Property Damage Only,2017-08,2957
+month_severity,Fatal,2017-09,40
+month_severity,Major Injury,2017-09,150
+month_severity,Minor Injury,2017-09,497
+month_severity,Possible/Unknown,2017-09,817
+month_severity,Property Damage Only,2017-09,3126
+month_severity,Fatal,2017-10,29
+month_severity,Major Injury,2017-10,103
+month_severity,Minor Injury,2017-10,422
+month_severity,Possible/Unknown,2017-10,855
+month_severity,Property Damage Only,2017-10,3962
+month_severity,Fatal,2017-11,15
+month_severity,Major Injury,2017-11,78
+month_severity,Minor Injury,2017-11,380
+month_severity,Possible/Unknown,2017-11,822
+month_severity,Property Damage Only,2017-11,4299
+month_severity,Fatal,2017-12,24
+month_severity,Major Injury,2017-12,87
+month_severity,Minor Injury,2017-12,427
+month_severity,Possible/Unknown,2017-12,922
+month_severity,Property Damage Only,2017-12,4435
+month_severity,Fatal,2018-01,22
+month_severity,Major Injury,2018-01,50
+month_severity,Minor Injury,2018-01,327
+month_severity,Possible/Unknown,2018-01,793
+month_severity,Property Damage Only,2018-01,3876
+month_severity,Fatal,2018-02,21
+month_severity,Major Injury,2018-02,65
+month_severity,Minor Injury,2018-02,342
+month_severity,Possible/Unknown,2018-02,768
+month_severity,Property Damage Only,2018-02,3772
+month_severity,Fatal,2018-03,12
+month_severity,Major Injury,2018-03,80
+month_severity,Minor Injury,2018-03,330
+month_severity,Possible/Unknown,2018-03,671
+month_severity,Property Damage Only,2018-03,3038
+month_severity,Fatal,2018-04,25
+month_severity,Major Injury,2018-04,78
+month_severity,Minor Injury,2018-04,370
+month_severity,Possible/Unknown,2018-04,707
+month_severity,Property Damage Only,2018-04,2955
+month_severity,Fatal,2018-05,22
+month_severity,Major Injury,2018-05,114
+month_severity,Minor Injury,2018-05,485
+month_severity,Possible/Unknown,2018-05,734
+month_severity,Property Damage Only,2018-05,3214
+month_severity,Fatal,2018-06,36
+month_severity,Major Injury,2018-06,127
+month_severity,Minor Injury,2018-06,477
+month_severity,Possible/Unknown,2018-06,680
+month_severity,Property Damage Only,2018-06,3195
+month_severity,Fatal,2018-07,32
+month_severity,Major Injury,2018-07,110
+month_severity,Minor Injury,2018-07,441
+month_severity,Possible/Unknown,2018-07,704
+month_severity,Property Damage Only,2018-07,2777
+month_severity,Fatal,2018-08,30
+month_severity,Major Injury,2018-08,116
+month_severity,Minor Injury,2018-08,455
+month_severity,Possible/Unknown,2018-08,752
+month_severity,Property Damage Only,2018-08,2979
+month_severity,Fatal,2018-09,21
+month_severity,Major Injury,2018-09,104
+month_severity,Minor Injury,2018-09,482
+month_severity,Possible/Unknown,2018-09,763
+month_severity,Property Damage Only,2018-09,3237
+month_severity,Fatal,2018-10,23
+month_severity,Major Injury,2018-10,86
+month_severity,Minor Injury,2018-10,460
+month_severity,Possible/Unknown,2018-10,825
+month_severity,Property Damage Only,2018-10,3975
+month_severity,Fatal,2018-11,25
+month_severity,Major Injury,2018-11,88
+month_severity,Minor Injury,2018-11,401
+month_severity,Possible/Unknown,2018-11,834
+month_severity,Property Damage Only,2018-11,4674
+month_severity,Fatal,2018-12,22
+month_severity,Major Injury,2018-12,76
+month_severity,Minor Injury,2018-12,387
+month_severity,Possible/Unknown,2018-12,811
+month_severity,Property Damage Only,2018-12,3819
+month_severity,Fatal,2019-01,19
+month_severity,Major Injury,2019-01,77
+month_severity,Minor Injury,2019-01,364
+month_severity,Possible/Unknown,2019-01,820
+month_severity,Property Damage Only,2019-01,4357
+month_severity,Fatal,2019-02,17
+month_severity,Major Injury,2019-02,43
+month_severity,Minor Injury,2019-02,364
+month_severity,Possible/Unknown,2019-02,895
+month_severity,Property Damage Only,2019-02,4674
+month_severity,Fatal,2019-03,19
+month_severity,Major Injury,2019-03,50
+month_severity,Minor Injury,2019-03,344
+month_severity,Possible/Unknown,2019-03,620
+month_severity,Property Damage Only,2019-03,3016
+month_severity,Fatal,2019-04,21
+month_severity,Major Injury,2019-04,80
+month_severity,Minor Injury,2019-04,427
+month_severity,Possible/Unknown,2019-04,643
+month_severity,Property Damage Only,2019-04,2855
+month_severity,Fatal,2019-05,27
+month_severity,Major Injury,2019-05,94
+month_severity,Minor Injury,2019-05,475
+month_severity,Possible/Unknown,2019-05,724
+month_severity,Property Damage Only,2019-05,3198
+month_severity,Fatal,2019-06,34
+month_severity,Major Injury,2019-06,128
+month_severity,Minor Injury,2019-06,471
+month_severity,Possible/Unknown,2019-06,694
+month_severity,Property Damage Only,2019-06,3299
+month_severity,Fatal,2019-07,28
+month_severity,Major Injury,2019-07,124
+month_severity,Minor Injury,2019-07,476
+month_severity,Possible/Unknown,2019-07,735
+month_severity,Property Damage Only,2019-07,2994
+month_severity,Fatal,2019-08,30
+month_severity,Major Injury,2019-08,134
+month_severity,Minor Injury,2019-08,485
+month_severity,Possible/Unknown,2019-08,756
+month_severity,Property Damage Only,2019-08,2903
+month_severity,Fatal,2019-09,39
+month_severity,Major Injury,2019-09,113
+month_severity,Minor Injury,2019-09,464
+month_severity,Possible/Unknown,2019-09,818
+month_severity,Property Damage Only,2019-09,3066
+month_severity,Fatal,2019-10,21
+month_severity,Major Injury,2019-10,89
+month_severity,Minor Injury,2019-10,463
+month_severity,Possible/Unknown,2019-10,850
+month_severity,Property Damage Only,2019-10,4019
+month_severity,Fatal,2019-11,32
+month_severity,Major Injury,2019-11,95
+month_severity,Minor Injury,2019-11,385
+month_severity,Possible/Unknown,2019-11,842
+month_severity,Property Damage Only,2019-11,4610
+month_severity,Fatal,2019-12,27
+month_severity,Major Injury,2019-12,94
+month_severity,Minor Injury,2019-12,414
+month_severity,Possible/Unknown,2019-12,806
+month_severity,Property Damage Only,2019-12,3804
+month_severity,Fatal,2020-01,22
+month_severity,Major Injury,2020-01,57
+month_severity,Minor Injury,2020-01,362
+month_severity,Possible/Unknown,2020-01,820
+month_severity,Property Damage Only,2020-01,3992
+month_severity,Fatal,2020-02,15
+month_severity,Major Injury,2020-02,58
+month_severity,Minor Injury,2020-02,296
+month_severity,Possible/Unknown,2020-02,613
+month_severity,Property Damage Only,2020-02,2784
+month_severity,Fatal,2020-03,13
+month_severity,Major Injury,2020-03,66
+month_severity,Minor Injury,2020-03,260
+month_severity,Possible/Unknown,2020-03,514
+month_severity,Property Damage Only,2020-03,2136
+month_severity,Fatal,2020-04,16
+month_severity,Major Injury,2020-04,66
+month_severity,Minor Injury,2020-04,249
+month_severity,Possible/Unknown,2020-04,385
+month_severity,Property Damage Only,2020-04,1652
+month_severity,Fatal,2020-05,20
+month_severity,Major Injury,2020-05,93
+month_severity,Minor Injury,2020-05,304
+month_severity,Possible/Unknown,2020-05,475
+month_severity,Property Damage Only,2020-05,2100
+month_severity,Fatal,2020-06,24
+month_severity,Major Injury,2020-06,126
+month_severity,Minor Injury,2020-06,434
+month_severity,Possible/Unknown,2020-06,609
+month_severity,Property Damage Only,2020-06,2770
+month_severity,Fatal,2020-07,39
+month_severity,Major Injury,2020-07,101
+month_severity,Minor Injury,2020-07,465
+month_severity,Possible/Unknown,2020-07,693
+month_severity,Property Damage Only,2020-07,2642
+month_severity,Fatal,2020-08,44
+month_severity,Major Injury,2020-08,150
+month_severity,Minor Injury,2020-08,507
+month_severity,Possible/Unknown,2020-08,722
+month_severity,Property Damage Only,2020-08,2806
+month_severity,Fatal,2020-09,40
+month_severity,Major Injury,2020-09,122
+month_severity,Minor Injury,2020-09,452
+month_severity,Possible/Unknown,2020-09,703
+month_severity,Property Damage Only,2020-09,2826
+month_severity,Fatal,2020-10,23
+month_severity,Major Injury,2020-10,91
+month_severity,Minor Injury,2020-10,484
+month_severity,Possible/Unknown,2020-10,754
+month_severity,Property Damage Only,2020-10,3641
+month_severity,Fatal,2020-11,25
+month_severity,Major Injury,2020-11,107
+month_severity,Minor Injury,2020-11,324
+month_severity,Possible/Unknown,2020-11,657
+month_severity,Property Damage Only,2020-11,3523
+month_severity,Fatal,2020-12,29
+month_severity,Major Injury,2020-12,63
+month_severity,Minor Injury,2020-12,348
+month_severity,Possible/Unknown,2020-12,686
+month_severity,Property Damage Only,2020-12,3496
+month_severity,Fatal,2021-01,14
+month_severity,Major Injury,2021-01,67
+month_severity,Minor Injury,2021-01,301
+month_severity,Possible/Unknown,2021-01,673
+month_severity,Property Damage Only,2021-01,3431
+month_severity,Fatal,2021-02,12
+month_severity,Major Injury,2021-02,53
+month_severity,Minor Injury,2021-02,362
+month_severity,Possible/Unknown,2021-02,776
+month_severity,Property Damage Only,2021-02,3965
+month_severity,Fatal,2021-03,17
+month_severity,Major Injury,2021-03,76
+month_severity,Minor Injury,2021-03,286
+month_severity,Possible/Unknown,2021-03,617
+month_severity,Property Damage Only,2021-03,2509
+month_severity,Fatal,2021-04,28
+month_severity,Major Injury,2021-04,109
+month_severity,Minor Injury,2021-04,359
+month_severity,Possible/Unknown,2021-04,660
+month_severity,Property Damage Only,2021-04,2569
+month_severity,Fatal,2021-05,38
+month_severity,Major Injury,2021-05,113
+month_severity,Minor Injury,2021-05,467
+month_severity,Possible/Unknown,2021-05,769
+month_severity,Property Damage Only,2021-05,3041
+month_severity,Fatal,2021-06,32
+month_severity,Major Injury,2021-06,120
+month_severity,Minor Injury,2021-06,551
+month_severity,Possible/Unknown,2021-06,732
+month_severity,Property Damage Only,2021-06,3238
+month_severity,Fatal,2021-07,31
+month_severity,Major Injury,2021-07,122
+month_severity,Minor Injury,2021-07,520
+month_severity,Possible/Unknown,2021-07,665
+month_severity,Property Damage Only,2021-07,2875
+month_severity,Fatal,2021-08,38
+month_severity,Major Injury,2021-08,124
+month_severity,Minor Injury,2021-08,518
+month_severity,Possible/Unknown,2021-08,746
+month_severity,Property Damage Only,2021-08,2853
+month_severity,Fatal,2021-09,35
+month_severity,Major Injury,2021-09,126
+month_severity,Minor Injury,2021-09,492
+month_severity,Possible/Unknown,2021-09,709
+month_severity,Property Damage Only,2021-09,3174
+month_severity,Fatal,2021-10,33
+month_severity,Major Injury,2021-10,126
+month_severity,Minor Injury,2021-10,447
+month_severity,Possible/Unknown,2021-10,833
+month_severity,Property Damage Only,2021-10,3799
+month_severity,Fatal,2021-11,26
+month_severity,Major Injury,2021-11,88
+month_severity,Minor Injury,2021-11,391
+month_severity,Possible/Unknown,2021-11,714
+month_severity,Property Damage Only,2021-11,4004
+month_severity,Fatal,2021-12,25
+month_severity,Major Injury,2021-12,103
+month_severity,Minor Injury,2021-12,408
+month_severity,Possible/Unknown,2021-12,825
+month_severity,Property Damage Only,2021-12,3789
+month_severity,Fatal,2022-01,17
+month_severity,Major Injury,2022-01,63
+month_severity,Minor Injury,2022-01,330
+month_severity,Possible/Unknown,2022-01,653
+month_severity,Property Damage Only,2022-01,3307
+month_severity,Fatal,2022-02,21
+month_severity,Major Injury,2022-02,68
+month_severity,Minor Injury,2022-02,328
+month_severity,Possible/Unknown,2022-02,620
+month_severity,Property Damage Only,2022-02,2841
+month_severity,Fatal,2022-03,23
+month_severity,Major Injury,2022-03,77
+month_severity,Minor Injury,2022-03,322
+month_severity,Possible/Unknown,2022-03,585
+month_severity,Property Damage Only,2022-03,2591
+month_severity,Fatal,2022-04,20
+month_severity,Major Injury,2022-04,81
+month_severity,Minor Injury,2022-04,374
+month_severity,Possible/Unknown,2022-04,654
+month_severity,Property Damage Only,2022-04,2721
+month_severity,Fatal,2022-05,36
+month_severity,Major Injury,2022-05,117
+month_severity,Minor Injury,2022-05,469
+month_severity,Possible/Unknown,2022-05,701
+month_severity,Property Damage Only,2022-05,3033
+month_severity,Fatal,2022-06,19
+month_severity,Major Injury,2022-06,144
+month_severity,Minor Injury,2022-06,482
+month_severity,Possible/Unknown,2022-06,674
+month_severity,Property Damage Only,2022-06,3038
+month_severity,Fatal,2022-07,36
+month_severity,Major Injury,2022-07,115
+month_severity,Minor Injury,2022-07,484
+month_severity,Possible/Unknown,2022-07,663
+month_severity,Property Damage Only,2022-07,2699
+month_severity,Fatal,2022-08,30
+month_severity,Major Injury,2022-08,130
+month_severity,Minor Injury,2022-08,499
+month_severity,Possible/Unknown,2022-08,721
+month_severity,Property Damage Only,2022-08,2886
+month_severity,Fatal,2022-09,31
+month_severity,Major Injury,2022-09,104
+month_severity,Minor Injury,2022-09,489
+month_severity,Possible/Unknown,2022-09,741
+month_severity,Property Damage Only,2022-09,3018
+month_severity,Fatal,2022-10,31
+month_severity,Major Injury,2022-10,130
+month_severity,Minor Injury,2022-10,480
+month_severity,Possible/Unknown,2022-10,758
+month_severity,Property Damage Only,2022-10,3604
+month_severity,Fatal,2022-11,20
+month_severity,Major Injury,2022-11,79
+month_severity,Minor Injury,2022-11,402
+month_severity,Possible/Unknown,2022-11,775
+month_severity,Property Damage Only,2022-11,4345
+month_severity,Fatal,2022-12,21
+month_severity,Major Injury,2022-12,77
+month_severity,Minor Injury,2022-12,410
+month_severity,Possible/Unknown,2022-12,892
+month_severity,Property Damage Only,2022-12,4627
+month_severity,Fatal,2023-01,22
+month_severity,Major Injury,2023-01,67
+month_severity,Minor Injury,2023-01,331
+month_severity,Possible/Unknown,2023-01,717
+month_severity,Property Damage Only,2023-01,3518
+month_severity,Fatal,2023-02,15
+month_severity,Major Injury,2023-02,61
+month_severity,Minor Injury,2023-02,296
+month_severity,Possible/Unknown,2023-02,649
+month_severity,Property Damage Only,2023-02,2972
+month_severity,Fatal,2023-03,21
+month_severity,Major Injury,2023-03,65
+month_severity,Minor Injury,2023-03,304
+month_severity,Possible/Unknown,2023-03,597
+month_severity,Property Damage Only,2023-03,2779
+month_severity,Fatal,2023-04,24
+month_severity,Major Injury,2023-04,96
+month_severity,Minor Injury,2023-04,395
+month_severity,Possible/Unknown,2023-04,629
+month_severity,Property Damage Only,2023-04,2610
+month_severity,Fatal,2023-05,30
+month_severity,Major Injury,2023-05,122
+month_severity,Minor Injury,2023-05,518
+month_severity,Possible/Unknown,2023-05,717
+month_severity,Property Damage Only,2023-05,3297
+month_severity,Fatal,2023-06,34
+month_severity,Major Injury,2023-06,135
+month_severity,Minor Injury,2023-06,520
+month_severity,Possible/Unknown,2023-06,700
+month_severity,Property Damage Only,2023-06,3119
+month_severity,Fatal,2023-07,33
+month_severity,Major Injury,2023-07,112
+month_severity,Minor Injury,2023-07,512
+month_severity,Possible/Unknown,2023-07,658
+month_severity,Property Damage Only,2023-07,2717
+month_severity,Fatal,2023-08,43
+month_severity,Major Injury,2023-08,142
+month_severity,Minor Injury,2023-08,524
+month_severity,Possible/Unknown,2023-08,711
+month_severity,Property Damage Only,2023-08,2792
+month_severity,Fatal,2023-09,26
+month_severity,Major Injury,2023-09,116
+month_severity,Minor Injury,2023-09,506
+month_severity,Possible/Unknown,2023-09,733
+month_severity,Property Damage Only,2023-09,3033
+month_severity,Fatal,2023-10,26
+month_severity,Major Injury,2023-10,82
+month_severity,Minor Injury,2023-10,449
+month_severity,Possible/Unknown,2023-10,745
+month_severity,Property Damage Only,2023-10,3690
+month_severity,Fatal,2023-11,29
+month_severity,Major Injury,2023-11,98
+month_severity,Minor Injury,2023-11,440
+month_severity,Possible/Unknown,2023-11,707
+month_severity,Property Damage Only,2023-11,4264
+month_severity,Fatal,2023-12,27
+month_severity,Major Injury,2023-12,57
+month_severity,Minor Injury,2023-12,371
+month_severity,Possible/Unknown,2023-12,654
+month_severity,Property Damage Only,2023-12,3213
+month_severity,Fatal,2024-01,14
+month_severity,Major Injury,2024-01,58
+month_severity,Minor Injury,2024-01,310
+month_severity,Possible/Unknown,2024-01,784
+month_severity,Property Damage Only,2024-01,4346
+month_severity,Fatal,2024-02,17
+month_severity,Major Injury,2024-02,58
+month_severity,Minor Injury,2024-02,290
+month_severity,Possible/Unknown,2024-02,501
+month_severity,Property Damage Only,2024-02,2421
+month_severity,Fatal,2024-03,25
+month_severity,Major Injury,2024-03,81
+month_severity,Minor Injury,2024-03,361
+month_severity,Possible/Unknown,2024-03,568
+month_severity,Property Damage Only,2024-03,2698
+month_severity,Fatal,2024-04,18
+month_severity,Major Injury,2024-04,79
+month_severity,Minor Injury,2024-04,383
+month_severity,Possible/Unknown,2024-04,644
+month_severity,Property Damage Only,2024-04,2770
+month_severity,Fatal,2024-05,24
+month_severity,Major Injury,2024-05,117
+month_severity,Minor Injury,2024-05,451
+month_severity,Possible/Unknown,2024-05,750
+month_severity,Property Damage Only,2024-05,3206
+month_severity,Fatal,2024-06,30
+month_severity,Major Injury,2024-06,138
+month_severity,Minor Injury,2024-06,488
+month_severity,Possible/Unknown,2024-06,629
+month_severity,Property Damage Only,2024-06,3131
+month_severity,Fatal,2024-07,35
+month_severity,Major Injury,2024-07,128
+month_severity,Minor Injury,2024-07,493
+month_severity,Possible/Unknown,2024-07,588
+month_severity,Property Damage Only,2024-07,2825
+month_severity,Fatal,2024-08,41
+month_severity,Major Injury,2024-08,120
+month_severity,Minor Injury,2024-08,477
+month_severity,Possible/Unknown,2024-08,675
+month_severity,Property Damage Only,2024-08,2776
+month_severity,Fatal,2024-09,35
+month_severity,Major Injury,2024-09,126
+month_severity,Minor Injury,2024-09,520
+month_severity,Possible/Unknown,2024-09,709
+month_severity,Property Damage Only,2024-09,3050
+month_severity,Fatal,2024-10,37
+month_severity,Major Injury,2024-10,107
+month_severity,Minor Injury,2024-10,507
+month_severity,Possible/Unknown,2024-10,754
+month_severity,Property Damage Only,2024-10,3714
+month_severity,Fatal,2024-11,20
+month_severity,Major Injury,2024-11,68
+month_severity,Minor Injury,2024-11,405
+month_severity,Possible/Unknown,2024-11,677
+month_severity,Property Damage Only,2024-11,4098
+month_severity,Fatal,2024-12,29
+month_severity,Major Injury,2024-12,77
+month_severity,Minor Injury,2024-12,387
+month_severity,Possible/Unknown,2024-12,712
+month_severity,Property Damage Only,2024-12,3762
+month_severity,Fatal,2025-01,17
+month_severity,Major Injury,2025-01,61
+month_severity,Minor Injury,2025-01,316
+month_severity,Possible/Unknown,2025-01,597
+month_severity,Property Damage Only,2025-01,3113
+month_severity,Fatal,2025-02,16
+month_severity,Major Injury,2025-02,48
+month_severity,Minor Injury,2025-02,305
+month_severity,Possible/Unknown,2025-02,600
+month_severity,Property Damage Only,2025-02,3075
+month_severity,Fatal,2025-03,17
+month_severity,Major Injury,2025-03,94
+month_severity,Minor Injury,2025-03,353
+month_severity,,2025-03,1
+month_severity,Possible/Unknown,2025-03,626
+month_severity,Property Damage Only,2025-03,2756
+month_severity,Fatal,2025-04,18
+month_severity,Major Injury,2025-04,91
+month_severity,Minor Injury,2025-04,362
+month_severity,Possible/Unknown,2025-04,582
+month_severity,Property Damage Only,2025-04,2514
+month_severity,Fatal,2025-05,24
+month_severity,Major Injury,2025-05,117
+month_severity,Minor Injury,2025-05,455
+month_severity,Possible/Unknown,2025-05,677
+month_severity,Property Damage Only,2025-05,3146
+month_severity,Fatal,2025-06,25
+month_severity,Major Injury,2025-06,107
+month_severity,Minor Injury,2025-06,451
+month_severity,Possible/Unknown,2025-06,622
+month_severity,Property Damage Only,2025-06,2934
+month_severity,Fatal,2025-07,25
+month_severity,Major Injury,2025-07,113
+month_severity,Minor Injury,2025-07,446
+month_severity,Possible/Unknown,2025-07,633
+month_severity,Property Damage Only,2025-07,2902
+month_severity,Fatal,2025-08,34
+month_severity,Major Injury,2025-08,108
+month_severity,Minor Injury,2025-08,426
+month_severity,Possible/Unknown,2025-08,655
+month_severity,Property Damage Only,2025-08,2833
+month_severity,Fatal,2025-09,21
+month_severity,Major Injury,2025-09,100
+month_severity,Minor Injury,2025-09,461
+month_severity,Possible/Unknown,2025-09,657
+month_severity,Property Damage Only,2025-09,2887
+month_severity,Fatal,2025-10,21
+month_severity,Major Injury,2025-10,95
+month_severity,Minor Injury,2025-10,498
+month_severity,Possible/Unknown,2025-10,736
+month_severity,Property Damage Only,2025-10,3829
+month_severity,Fatal,2025-11,17
+month_severity,Major Injury,2025-11,87
+month_severity,Minor Injury,2025-11,420
+month_severity,Possible/Unknown,2025-11,714
+month_severity,Property Damage Only,2025-11,4472
+month_severity,Fatal,2025-12,11
+month_severity,Major Injury,2025-12,64
+month_severity,Minor Injury,2025-12,399
+month_severity,Possible/Unknown,2025-12,754
+month_severity,Property Damage Only,2025-12,4187
+month_severity,Fatal,2026-01,21
+month_severity,Major Injury,2026-01,59
+month_severity,Minor Injury,2026-01,301
+month_severity,Possible/Unknown,2026-01,580
+month_severity,Property Damage Only,2026-01,3072
+month_severity,Fatal,2026-02,10
+month_severity,Major Injury,2026-02,70
+month_severity,Minor Injury,2026-02,298
+month_severity,Possible/Unknown,2026-02,551
+month_severity,Property Damage Only,2026-02,2732
+month_severity,Fatal,2026-03,26
+month_severity,Major Injury,2026-03,72
+month_severity,Minor Injury,2026-03,374
+month_severity,Possible/Unknown,2026-03,602
+month_severity,Property Damage Only,2026-03,2805
+month_severity,Fatal,2026-04,20
+month_severity,Major Injury,2026-04,94
+month_severity,Minor Injury,2026-04,396
+month_severity,Possible/Unknown,2026-04,635
+month_severity,Property Damage Only,2026-04,2712
+month_severity,Fatal,2026-05,36
+month_severity,Major Injury,2026-05,139
+month_severity,Minor Injury,2026-05,552
+month_severity,Possible/Unknown,2026-05,818
+month_severity,Property Damage Only,2026-05,3882
+month_severity,Fatal,2026-06,26
+month_severity,Major Injury,2026-06,130
+month_severity,Minor Injury,2026-06,447
+month_severity,Possible/Unknown,2026-06,668
+month_severity,Property Damage Only,2026-06,3023
+month_severity,Fatal,2026-07,22
+month_severity,Major Injury,2026-07,141
+month_severity,Minor Injury,2026-07,492
+month_severity,Possible/Unknown,2026-07,626
+month_severity,Property Damage Only,2026-07,2830
+month_severity,Fatal,2026-08,30
+month_severity,Major Injury,2026-08,122
+month_severity,Minor Injury,2026-08,473
+month_severity,Possible/Unknown,2026-08,637
+month_severity,Property Damage Only,2026-08,2659
+month_severity,Fatal,2026-09,16
+month_severity,Major Injury,2026-09,98
+month_severity,Minor Injury,2026-09,476
+month_severity,Possible/Unknown,2026-09,678
+month_severity,Property Damage Only,2026-09,2915
+month_severity,Fatal,2026-10,20
+month_severity,Major Injury,2026-10,111
+month_severity,Minor Injury,2026-10,472
+month_severity,Possible/Unknown,2026-10,757
+month_severity,Property Damage Only,2026-10,3741
+month_severity,Fatal,2026-11,10
+month_severity,Major Injury,2026-11,21
+month_severity,Minor Injury,2026-11,142
+month_severity,Possible/Unknown,2026-11,256
+month_severity,Property Damage Only,2026-11,1447
+severity,Fatal,,3627
+severity,Major Injury,,13898
+severity,Minor Injury,,59266
+severity,,,1
+severity,Possible/Unknown,,101970
+severity,Property Damage Only,,463116
+county,ADAIR,,2348
+county,ADAMS,,433
+county,ALLAMAKEE,,2224
+county,APPANOOSE,,2482
+county,AUDUBON,,747
+county,BENTON,,3553
+county,BLACK HAWK,,24828
+county,BOONE,,4361
+county,BREMER,,4345
+county,BUCHANAN,,3569
+county,BUENA VISTA,,3528
+county,BUTLER,,1021
+county,CALHOUN,,1318
+county,CARROLL,,2800
+county,CASS,,2881
+county,CEDAR,,4621
+county,CERRO GORDO,,11786
+county,CHEROKEE,,2050
+county,CHICKASAW,,1942
+county,CLARKE,,2340
+county,CLAY,,3522
+county,CLAYTON,,3635
+county,CLINTON,,8885
+county,CRAWFORD,,2642
+county,DALLAS,,15010
+county,DAVIS,,1185
+county,DECATUR,,1322
+county,DELAWARE,,2899
+county,DES MOINES,,9812
+county,DICKINSON,,3087
+county,DUBUQUE,,23186
+county,EMMET,,1988
+county,FAYETTE,,3519
+county,FLOYD,,3082
+county,FRANKLIN,,2175
+county,FREMONT,,1630
+county,GREENE,,1756
+county,GRUNDY,,2262
+county,GUTHRIE,,1488
+county,HAMILTON,,4414
+county,HANCOCK,,1286
+county,HARDIN,,3334
+county,HARRISON,,3586
+county,HENRY,,3843
+county,HOWARD,,1222
+county,HUMBOLDT,,1785
+county,IDA,,1278
+county,IOWA,,4613
+county,JACKSON,,2416
+county,JASPER,,7364
+county,JEFFERSON,,2609
+county,JOHNSON,,28940
+county,JONES,,3215
+county,KEOKUK,,1069
+county,KOSSUTH,,1676
+county,LEE,,7964
+county,LINN,,39947
+county,LOUISA,,2345
+county,LUCAS,,1347
+county,LYON,,1683
+county,MADISON,,2351
+county,MAHASKA,,3638
+county,MARION,,6423
+county,MARSHALL,,8193
+county,MILLS,,2759
+county,MITCHELL,,1026
+county,MONONA,,1907
+county,MONROE,,1377
+county,MONTGOMERY,,1495
+county,MUSCATINE,,6537
+county,OBRIEN,,1762
+county,OSCEOLA,,916
+county,PAGE,,1595
+county,PALO ALTO,,1628
+county,PLYMOUTH,,4834
+county,POCAHONTAS,,789
+county,POLK,,123146
+county,POTTAWATTAMIE,,24059
+county,POWESHIEK,,3738
+county,RINGGOLD,,550
+county,SAC,,1773
+county,SCOTT,,42646
+county,SHELBY,,1190
+county,SIOUX,,5570
+county,STORY,,18456
+county,TAMA,,3431
+county,TAYLOR,,667
+county,UNION,,1721
+county,Unknown,,1138
+county,VAN BUREN,,843
+county,WAPELLO,,6328
+county,WARREN,,8421
+county,WASHINGTON,,2819
+county,WAYNE,,680
+county,WEBSTER,,9559
+county,WINNEBAGO,,626
+county,WINNESHIEK,,4238
+county,WOODBURY,,27678
+county,WORTH,,1125
+county,WRIGHT,,2048

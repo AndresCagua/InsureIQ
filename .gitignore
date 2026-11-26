@@ -20,6 +20,8 @@ data/processed/public_vehicle_fraud_benchmark.csv
 data/processed/public_vehicle_fraud_benchmark_metadata.json
 reports/fraud_model.joblib
 reports/model_registry.json
+dashboards/exports/public_iowa_crashes_sample.csv
+dashboards/exports/public_vehicle_fraud_benchmark.csv
 data/processed/
 data/synthetic/
 mlruns/
